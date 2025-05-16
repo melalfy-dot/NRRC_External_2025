@@ -1,0 +1,59 @@
+﻿@using Umbraco.Cms.Core.Routing
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+
+@{
+    var _Widget = (Widget_ListOfPartners)Model.Content;
+    @if (_Widget != null && _Widget.Partners != null && _Widget.Partners.Count > 0 && _Widget.HideWidget is false)
+    {
+        var targetLst = _Widget.Partners.Where(a => a.Content.Value<Boolean>(nameof(Partner.Hide)) is false);
+
+        <!-- start partners -->
+        <section class="partners">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="textSec">
+                            <h2 class="font30">@_Widget?.Title</h2>
+                        </div>
+                    </div>
+                    <!-- end text -->
+                    <div class="col-md-12">
+                        <div class="swiper partnersSwiper">
+                            <div class="swiper-wrapper">
+                                @foreach (var item in targetLst)
+                                {
+                                    var _Item = (Partner)item.Content;
+                                    if (_Item != null)
+                                    {
+                                        var IconUrl = _Item?.IconImage?.Url(IPublishedUrlProvider);
+                                        var imgAltText = _Item?.IconImage?.Value<string>(nameof(Image.AltText));
+                                        var PartnerUrl = _Item?.Url?.Url;
+
+                                        <div class="swiper-slide">
+                                            <div class="partner">
+                                                <a href="@PartnerUrl">
+                                                    <img src="@IconUrl" alt="@imgAltText" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- end slider -->
+                                    }
+                                }
+                            </div>
+                        </div>
+
+                        <div class="postionApos container">
+                            <div class="swiper-button-next customArrowNext"></div>
+                            <div class="swiper-button-prev customArrowPrev"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end partners -->
+    }
+
+}

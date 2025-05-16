@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models;
+@using Umbraco.Extensions;
+
+@{
+    var currentPage = Umbraco.AssignedContentItem;
+    var master = Umbraco.ContentAtRoot().FirstOrDefault(a => a.ContentType.Alias == Dt_HomePage.ModelTypeAlias); // Assuming the first node is the home page
+    bool isHome = currentPage != null && currentPage.Id == master?.Id;
+    if (isHome is false && master != null)
+    {
+        var FooterBlockGridItem = ((Dt_HomePage)master).FooterPageWidgets?.FirstOrDefault();
+        if (FooterBlockGridItem != null)
+        {
+            var partialViewName = "/Views/Widgets/" + FooterBlockGridItem.Content.ContentType.Alias + ".cshtml";
+
+            @await Html.PartialAsync(partialViewName, FooterBlockGridItem)
+        }
+
+    }
+
+}
+

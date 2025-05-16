@@ -1,0 +1,13 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@if (!string.IsNullOrEmpty(Model.Value<string>(nameof(PageBlockList.PageBlockGridDetails)).ToStringNull()))
+{
+    @await Html.PartialAsync("blockgrid/default", Model.Value(nameof(PageBlockList.PageBlockGridDetails)))
+}
+
+@if (!string.IsNullOrEmpty(Model.Value<string>(nameof(Footer.FooterPageWidgets)).ToStringNull()))
+{
+    @await Html.PartialAsync("blockgrid/default", Model.Value(nameof(Footer.FooterPageWidgets)))
+}
+
+    

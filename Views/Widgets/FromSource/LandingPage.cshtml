@@ -1,0 +1,58 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+@if (Model != null)
+{
+    var _Widget = (Widget_ItemsFromSource)Model.Content;
+
+    if (_Widget != null && _Widget.HideWidget is false && _Widget.SourceLink != null)
+    {
+        var _PageContent = (Dt_PageContent)_Widget.SourceLink;
+        if (_PageContent != null)
+        {
+            var items = _PageContent?.Children()?
+                                         .ToList();
+
+            if (items != null)
+            {
+                 <section class="about-list listCards">
+                    <div class="container container2">
+                        <div class="row">
+                            @foreach (Dt_PageContent item in items)
+                            {
+                                var pageIcon_Url = item?.PageIcon?.Url(IPublishedUrlProvider);
+                                var imgAltText = item?.PageIcon?.Value<string>(nameof(Image.AltText));
+
+                                <div class="col-lg-4">
+                                    <div class="listCard">
+                                        <div class="cardIcon">
+                                            <div class="bg">
+                                                <img src="@pageIcon_Url" alt="@imgAltText">
+                                            </div>
+                                        </div>
+                                        <h2 class="font18">
+                                            @item.ToPageTitle()
+                                        </h2>
+                                        <div class="gray-btn">
+                                            <a href="@item?.Url(IPublishedUrlProvider)">
+                                                <img src="/images/shared/arrow-left-black.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </section>
+            }
+
+        }
+
+
+    }
+
+}

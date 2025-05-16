@@ -1,0 +1,245 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@{
+     var currentPage = Umbraco.AssignedContentItem;
+    var master = Umbraco.ContentAtRoot().FirstOrDefault(a => a.ContentType.Alias == Dt_HomePage.ModelTypeAlias); // Assuming the first node is the home page
+    bool isHome = currentPage != null && currentPage.Id == master?.Id;
+    bool IsArabic = true;
+    string Lang = "ar";
+    string Lang_URL = "";
+    var OtherLangText = "EN";
+    var OtherLangUrl = Model?.Url("en-US");
+
+    List<string> types = new List<string>();
+    IEnumerable<IPublishedContent> selection = null;
+    var rootUrl = Model?.Root()?.Url();
+
+    try
+    {
+
+        if (Model != null && Model.GetCultureFromDomains() != null && !string.IsNullOrEmpty(Model.GetCultureFromDomains()))
+        {
+            if (Model.GetCultureFromDomains().ToLower().Contains("en"))
+            {
+                IsArabic = false;
+                Lang_URL = "/en";
+            }
+            else
+            {
+                IsArabic = true;
+                Lang_URL = "";
+            }
+        }
+
+        Lang = IsArabic ? "ar" : "en";
+        OtherLangText = IsArabic ? "English" : "عربي";
+        OtherLangUrl = IsArabic ? Model?.Url("en-US") : Model?.Url("ar");
+
+        types.Add(Dt_PageContent.ModelTypeAlias);
+        types.Add(Dt_News.ModelTypeAlias);
+        types.Add(Dt_Events.ModelTypeAlias);
+
+        if (master != null)
+        {
+            selection = master.Children
+                             .Where(x =>
+                                 x.IsVisible(PublishedValueFallback) &&
+                                 types.Contains(x.ContentType.Alias))
+                             .Where(x => x.Value<Boolean>(nameof(PageProperties.ShowInMainMenu)) == true)
+                             .ToArray();
+        }
+
+    }
+    catch (Exception ex)
+    {
+        SharedHelper.LogException(ex);
+    }
+}
+
+<section class="menuWithBanner">
+    <a href="@rootUrl" class="toggleOptions">
+        <img src="/images/shared/navBarDots.svg" alt="" />
+    </a>
+    <div class="navDGA">
+        <div class="container">
+            <div class="row row-new">
+                <div class="col-2-new">
+                    <div class="logoMain">
+                        <a href="@rootUrl">
+                            <img src="/images/shared/GAFTLogo.svg" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-7-new">
+                    <nav class="navbar navbarMenu navbar-expand-lg navbar-light">
+                        <div class="">
+                            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                            <button class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse"
+                            id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    @if (selection != null)
+                                    {
+                                        foreach (var item in selection)
+                                        {
+                                            var redirectURL = item.Value("redirectURL").ToLinkURL("");
+                                            IPublishedContent[]? children = null;
+
+                                            children = item.Children?
+                                            .Where(x => x.IsVisible(PublishedValueFallback) && types.Contains(x.ContentType.Alias))
+                                            .Where(x => x.Value<Boolean>(nameof(PageProperties.ShowInMainMenu)) == true)
+                                            .ToArray();
+
+                                            var itemLink = string.IsNullOrEmpty(redirectURL) ? item.Url(PublishedUrlProvider) : redirectURL;
+                                            if (children?.Length > 0)
+                                            {
+                                                itemLink = "#";
+                                            }
+                                            var parent = currentPage?.Parent;
+
+                                            var selected = currentPage?.Id==item?.Id ||currentPage?.Parent?.Id == item?.Id?"selected":"";
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle @selected"
+                                                   href="@itemLink"
+                                                   id="navbarDropdown"
+                                                   role="button"
+                                                   data-bs-toggle="dropdown"
+                                                   aria-expanded="false">
+                                                    @item.ToPageTitle()
+                                                </a>
+
+                                                @if (children?.Length > 0)
+                                                {
+                                                    <div class="dropdown-menu"
+                                                         aria-labelledby="navbarDropdown">
+                                                        <div class="container cont1280">
+                                                            <div class="row">
+                                                                @{
+                                                                    childPages(children, item);
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </li>
+                                            <!-- end dropdown -->
+                                        }
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-3-new">
+                    <ul class="navActions">
+                        <li class="searchCustom">
+                            <button type="button"
+                                    class="btnSr"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#searchModal">
+                                <img src="/images/shared/search-icon-black.svg"
+                                     alt="" />
+                            </button>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="/images/shared/question.svg" alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="/images/shared/phone.svg" alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@OtherLangUrl">
+                                <img src="/images/shared/earth.svg" alt="" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal modalSearch fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="SearchCustom">
+              <div class="forGroup">
+                <input type="text" class="searchInput" value="" placeholder="أدخل كلمة البحث...">
+                <button type="submit" class="searchSubmit">
+                  <img src="/images/shared/leading-iconSearcch.svg" alt="">
+                </button>
+              </div>
+              <div class="boxSloce">
+                <button button="" type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                  <img src="/images/shared/closeSearch.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+@{
+    void childPages(IPublishedContent[] childItems, IPublishedContent item)
+    {
+        // Track item count and create columns as needed
+        int itemCount = 0;
+        int itemsPerColumn = 6; // Maximum items per column
+
+        for (int i = 0; i < childItems.Length; i++)
+        {
+            // Start a new column every 6 items
+            if (itemCount % itemsPerColumn == 0)
+            {
+                if (itemCount > 0)
+                {
+                    @:</ul> <!-- Close previous ul -->
+                    @:</div> <!-- Close previous column -->
+                }
+
+                @:<div class="col-lg-3">
+                <!-- Start new column -->
+                @:<a href="@item.Url(PublishedUrlProvider)" class="title">@item.ToPageTitle()</a>
+                @:<ul>
+            }
+
+                    <li>
+                        <a class="dropdown-item" href="@childItems[i].Url(PublishedUrlProvider)">
+                    @childItems[i].ToPageTitle()
+                        </a>
+                    </li>
+
+            itemCount++;
+        }
+
+        // Close the last column if there were items
+        if (itemCount > 0)
+        {
+                @:</ul> <!-- Close last ul -->
+            @:</div> <!-- Close last column -->
+        }
+    }
+}
+
+
+

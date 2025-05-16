@@ -1,0 +1,53 @@
+﻿@using Umbraco.Cms.Core.Routing
+@using NRRC_External_2025.Models.Custom;
+
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+@{
+    if (Model.Content.ContentType.Alias == Widget_ItemsFromList.ModelTypeAlias)
+    {
+
+        var list = Model.Content.Value("listPaths").ToListIntger2();
+        if (list?.Count > 0)
+        {
+            foreach (var item in list)
+            {
+                var partialViewName = "/Views/Widgets/FromList/" + item.ContentType.Alias.Replace("DT_", "") + ".cshtml";
+
+                var layoutName = Model.Content.Value("layoutName").ToStringNull();
+                if (!string.IsNullOrEmpty(layoutName))
+                {
+                    partialViewName = "/Views/" + layoutName + ".cshtml";
+                }
+
+                try
+                {
+                    var currentPage = Umbraco.AssignedContentItem;
+                    var rootPage = Umbraco.ContentAtRoot().FirstOrDefault(a => a.ContentType.Alias == Dt_HomePage.ModelTypeAlias); // Assuming the first node is the home page
+                    bool isHomePage = currentPage != null && currentPage.Id == rootPage?.Id;
+                    BlockGridContentModel blockGridContentModel = new BlockGridContentModel()
+                            {
+                                BlockGridItem = Model,
+                                PublishedContentItem = item,
+                                isHomePage = isHomePage
+                            };
+                    @await Html.PartialAsync(partialViewName, blockGridContentModel)
+                }
+                catch (InvalidOperationException)
+                {
+                    <p>
+                        <strong>Could not render component of type: @(item.ContentType.Alias)</strong>
+                        <br />
+                        This likely happened because the partial view <em>@partialViewName</em> could not be found.
+                    </p>
+                }
+            }
+        }
+        else
+        {
+            @await Html.PartialAsync("_NoRecordsFull")
+        }
+    }
+}

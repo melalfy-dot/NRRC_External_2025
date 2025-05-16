@@ -1,0 +1,29 @@
+﻿@using Umbraco.Cms.Core.Routing
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+@{
+    var item = (Widget_ItemsFromSource)Model.Content;
+}
+
+@if (item.ContentType.Alias == Widget_ItemsFromSource.ModelTypeAlias)
+{
+    var partialViewName = "/Views/Widgets/FromSource/" + item.SourceWidget + ".cshtml";
+    try
+    {
+        @await Html.PartialAsync(partialViewName, Model)
+    }
+    catch (InvalidOperationException)
+    {
+        <p>
+            <strong>Could not render component of type: @(Model.Content.ContentType.Alias)</strong>
+            <br />
+            This likely happened because the partial view <em>@partialViewName</em> could not be found.
+        </p>
+    }
+}
+else
+{
+    @await Html.PartialAsync("_NoRecordsFull")
+}

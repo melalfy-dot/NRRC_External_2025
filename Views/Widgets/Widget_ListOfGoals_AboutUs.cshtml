@@ -1,0 +1,67 @@
+﻿@using Umbraco.Cms.Core.Routing
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+@{
+    var _Widget = (Widget_ListOfGoals_AboutUs)Model.Content;
+    var currentPage = Umbraco.AssignedContentItem;
+    var rootPage = Umbraco.ContentAtRoot().FirstOrDefault(a => a.ContentType.Alias == Dt_HomePage.ModelTypeAlias); // Assuming the first node is the home page
+    bool isHomePage = currentPage != null && currentPage.Id == rootPage?.Id;
+
+    if (_Widget != null && _Widget.Goals != null && _Widget.Goals.Count > 0 && _Widget.HideWidget is false)
+    {
+        var items = _Widget.Goals.Where(a => !a.Content.Value<Boolean>(nameof(AboutUs_Goal.Hide)));
+
+        <!-- start rollOfGaft -->
+        <section class="rollOfGaft @(isHomePage is false?"ourRole":"")">
+            <div class="container @(isHomePage is false?"container2":"")">
+                @if(isHomePage is false){
+                    @:<div class="bg-gray innerPadding">
+                }
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="textSec">
+                            <h2 class="font30">@_Widget?.Title</h2>
+                            <div class="p16">
+                                @Html.Raw(_Widget?.Details)
+                            </div>
+                        </div>
+                    </div>
+                    @if (items != null && items.Count() > 0)
+                    {
+                        foreach (var item in items)
+                        {   
+                            var _Item = (AboutUs_Goal)item.Content;
+                            if (_Item != null)
+                            {
+                                var IconImg = isHomePage is false ? _Item?.Icon : _Item?.IconForHomePage;
+                                var IconUrl = IconImg?.Url(IPublishedUrlProvider);
+                                 var imgAltText = IconImg?.Value<string>(nameof(Image.AltText));
+
+                                <div class="col-md-4">
+                                    <div class="@(isHomePage is false?"mainCard":"mainCardBorder")">
+                                        <div class="bgIcon">
+                                            <img src="@IconUrl" alt="@imgAltText" />
+                                        </div>
+                                        <h3 class="font18">@_Item?.Title</h3>
+                                        <p class="p16">
+                                            @_Item?.Details
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+
+                </div>
+                @if (isHomePage)
+                {
+                    @:</div>
+                }
+            </div>
+        </section>
+        <!-- end rollOfGaft -->
+    }
+
+}

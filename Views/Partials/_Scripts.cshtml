@@ -1,0 +1,43 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@{
+    bool IsArabic = true;
+
+    try
+    {
+        if (Model != null && !string.IsNullOrEmpty(Model.GetCultureFromDomains()))
+        {
+            if (Model.GetCultureFromDomains().ToStringNull().ToLower().Contains("en"))
+            {
+                IsArabic = false;
+            }
+            else
+            {
+                IsArabic = true;
+            }
+
+            var link = (Umbraco.Cms.Core.Models.Link)Model.Value("redirectURL");
+            if (link != null)
+            {
+                Context.Response.Redirect(Url.Content(link.ToLinkURL()));
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+
+    }
+}
+
+
+<script src="/scripts/jQuery.js"></script>
+<script src="/scripts/bootstrap.bundle.minV5.js"></script>
+<script src="/scripts/swiper-bundle.min.js"></script>
+<script src="/scripts/jquery.counterup.min.js"></script>
+<script src="/scripts/homeJs.js"></script>
+<script src="/scripts/custom.js"></script>
+

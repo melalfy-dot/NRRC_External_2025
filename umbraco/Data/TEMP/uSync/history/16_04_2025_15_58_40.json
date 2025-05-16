@@ -1,0 +1,400 @@
+{
+  "actions": [
+    {
+      "handlerAlias": "TemplateHandler",
+      "success": false,
+      "itemType": "ITemplate",
+      "message": "The template Layout_Home.cshtml file is missing.",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\Templates\\layout_home.config",
+      "name": "Layout_Home",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": null,
+      "key": "62e32b1d-d766-46b2-9075-72d5b63f0d76"
+    },
+    {
+      "handlerAlias": "TemplateHandler",
+      "success": false,
+      "itemType": "ITemplate",
+      "message": "The template Layout_Master.cshtml file is missing.",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\Templates\\layout_master.config",
+      "name": "Layout_Master",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": null,
+      "key": "feae369e-65eb-4db3-9996-13be4f812f20"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\dt_bannersitem.config",
+      "name": "Banners Item",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "1c613d0c-6e48-4fa8-9f6f-11750b5ded87",
+          "newValue": "eb441101-ae25-45c8-ada6-693811ce127a",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "Banners Item",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-layers color-light-blue",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Content",
+          "path": "Tabs/Content",
+          "oldValue": "",
+          "newValue": "Content",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Content",
+          "path": "Tabs/Content",
+          "oldValue": "",
+          "newValue": "Content",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "details/Key",
+          "oldValue": "181fa026-70aa-4bf8-ba36-7d035ee0ea05",
+          "newValue": "46d52e21-b9db-462e-af8f-75d527fda788",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "details/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Details",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "details/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "details/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "details/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "details/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "details",
+          "path": "details",
+          "oldValue": "",
+          "newValue": "Details",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "image/Key",
+          "oldValue": "e8a88ce5-a9d2-4577-a26c-e8e0e459eb0e",
+          "newValue": "8c76d3cc-0ddf-4b3f-8e15-658b7bb7562f",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "image/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Icon / Image",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "image/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "image/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "image/SortOrder",
+          "oldValue": "0",
+          "newValue": "2",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "image/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "image/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "image",
+          "path": "image",
+          "oldValue": "",
+          "newValue": "Icon / Image",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "url/Key",
+          "oldValue": "3ec3dfc8-3403-4550-a5c3-508494de6a4a",
+          "newValue": "33b16929-4b6f-49a5-aa8d-1b7e49db3479",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "url/Name",
+          "oldValue": "(Blank)",
+          "newValue": "URL",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "url/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "url/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "url/SortOrder",
+          "oldValue": "0",
+          "newValue": "1",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "url/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "url/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "url",
+          "path": "url",
+          "oldValue": "",
+          "newValue": "URL",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Compositions",
+          "path": "Info",
+          "oldValue": "(Blank)",
+          "newValue": "pageProperties",
+          "change": "Update"
+        }
+      ],
+      "key": "eb441101-ae25-45c8-ada6-693811ce127a"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\dt_banners.config",
+      "name": "Banners",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "0d2f8a21-2b52-4f20-9b85-adf8bcd46334",
+          "newValue": "80d8f54b-2ac5-4d10-b8c4-086842834dec",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "Banners",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-layers color-light-blue",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "IsListView",
+          "path": "",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": false,
+          "name": "DefaultTemplate",
+          "path": "DefaultTemplate",
+          "oldValue": "(Blank)",
+          "newValue": "Cannot find Template",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Compositions",
+          "path": "Info",
+          "oldValue": "(Blank)",
+          "newValue": "pageProperties",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Allowed",
+          "path": "/Structure",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        }
+      ],
+      "key": "80d8f54b-2ac5-4d10-b8c4-086842834dec"
+    }
+  ],
+  "date": "2025-04-16T15:58:40.9725918+03:00",
+  "username": "malfy@interactive.sa",
+  "method": "Import",
+  "filePath": null,
+  "changes": 4,
+  "total": 4
+}

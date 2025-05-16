@@ -1,0 +1,3656 @@
+{
+  "actions": [
+    {
+      "handlerAlias": "TemplateHandler",
+      "success": false,
+      "itemType": "ITemplate",
+      "message": "The template Layout_Home.cshtml file is missing.",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\Templates\\layout_home.config",
+      "name": "Layout_Home",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": null,
+      "key": "62e32b1d-d766-46b2-9075-72d5b63f0d76"
+    },
+    {
+      "handlerAlias": "TemplateHandler",
+      "success": false,
+      "itemType": "ITemplate",
+      "message": "The template Layout_Master.cshtml file is missing.",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\Templates\\layout_master.config",
+      "name": "Layout_Master",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": null,
+      "key": "feae369e-65eb-4db3-9996-13be4f812f20"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "Imported with warnings",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\dt_faqitem.config",
+      "name": "FAQ Item",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "94a66d40-33b7-4e44-9e6d-e6f732704aa8",
+          "newValue": "b2538747-ccb0-4a8f-9f6e-59d4190ad548",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "FAQ Item",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-columns color-light-blue",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Content",
+          "path": "Tabs/Content",
+          "oldValue": "",
+          "newValue": "Content",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Content",
+          "path": "Tabs/Content",
+          "oldValue": "",
+          "newValue": "Content",
+          "change": "Create"
+        },
+        {
+          "success": false,
+          "name": "answer",
+          "path": "Property/answer",
+          "oldValue": null,
+          "newValue": "Property 'answer' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": false,
+          "name": "category",
+          "path": "Property/category",
+          "oldValue": null,
+          "newValue": "Property 'category' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "order/Key",
+          "oldValue": "992c6ab5-b223-47ea-bf15-e7d3fdb44bb8",
+          "newValue": "6396ac4f-daa8-4aa2-9994-21ffaa151a73",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "order/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Order",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "order/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Mandatory",
+          "path": "order/Mandatory",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "order/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "order/SortOrder",
+          "oldValue": "0",
+          "newValue": "2",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "order/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "order/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "order",
+          "path": "order",
+          "oldValue": "",
+          "newValue": "Order",
+          "change": "Create"
+        }
+      ],
+      "key": "b2538747-ccb0-4a8f-9f6e-59d4190ad548"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\dt_numbers_item.config",
+      "name": "Numbers Item",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "6e056fff-d29a-4aa0-b129-0d6a90cd48ab",
+          "newValue": "45d720d4-2aee-49c0-8902-c4d07bd1b4f8",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "Numbers Item",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-activity color-light-blue",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Content",
+          "path": "Tabs/Content",
+          "oldValue": "",
+          "newValue": "Content",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Content",
+          "path": "Tabs/Content",
+          "oldValue": "",
+          "newValue": "Content",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "icon/Key",
+          "oldValue": "7f88df5c-ab0e-4783-bd55-42687f269eb1",
+          "newValue": "a0513408-b008-492b-828a-0dc5ec15c20c",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "icon/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Icon",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "icon/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "icon/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "icon/SortOrder",
+          "oldValue": "0",
+          "newValue": "6",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "icon/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "icon/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "icon",
+          "path": "icon",
+          "oldValue": "",
+          "newValue": "Icon",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "number/Key",
+          "oldValue": "34a59d5b-b7eb-486d-aeef-d368c2e3c9bb",
+          "newValue": "42cb3576-e578-464b-bd59-ebdb10300192",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "number/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Number",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "number/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "number/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "number/SortOrder",
+          "oldValue": "0",
+          "newValue": "1",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "number/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "number/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "number",
+          "path": "number",
+          "oldValue": "",
+          "newValue": "Number",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "order/Key",
+          "oldValue": "b18f0cc6-64ea-47d2-b592-6374deb9041f",
+          "newValue": "39de8eda-5d23-4fd6-a6b1-4a3e0ddeca86",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "order/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Order",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "order/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Mandatory",
+          "path": "order/Mandatory",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "order/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "order/SortOrder",
+          "oldValue": "0",
+          "newValue": "7",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "order/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "order/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "order",
+          "path": "order",
+          "oldValue": "",
+          "newValue": "Order",
+          "change": "Create"
+        }
+      ],
+      "key": "45d720d4-2aee-49c0-8902-c4d07bd1b4f8"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\pagechildrens.config",
+      "name": "Page Children's",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "f14f5eaa-5e63-461d-955d-ac429978a392",
+          "newValue": "1f8a4639-e5ba-4083-a643-32d575eb8fef",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "Page Children's",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-defrag",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Children",
+          "path": "Tabs/Children",
+          "oldValue": "",
+          "newValue": "Children",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "childrens/Key",
+          "oldValue": "55b273b0-92d2-4cd3-97b6-d712156c258c",
+          "newValue": "f7750573-2d3f-4b64-a604-d2635fe34655",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "childrens/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Children's",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "childrens/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "childrens/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "childrens/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "childrens/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "childrens",
+          "path": "childrens",
+          "oldValue": "",
+          "newValue": "Children's",
+          "change": "Create"
+        }
+      ],
+      "key": "1f8a4639-e5ba-4083-a643-32d575eb8fef"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "Imported with warnings",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\pagecontent.config",
+      "name": "Page Content",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "1c6fcee2-e091-4d14-a589-cf4ad3e63888",
+          "newValue": "144cc30d-58d6-4659-9bdd-f31830fde04c",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "Page Content",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-defrag",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Content",
+          "path": "Tabs/Content",
+          "oldValue": "",
+          "newValue": "Content",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Content",
+          "path": "Tabs/Content",
+          "oldValue": "",
+          "newValue": "Content",
+          "change": "Create"
+        },
+        {
+          "success": false,
+          "name": "pageContentDetails",
+          "path": "Property/pageContentDetails",
+          "oldValue": null,
+          "newValue": "Property 'pageContentDetails' cannot be created (missing DataType?)",
+          "change": "Warning"
+        }
+      ],
+      "key": "144cc30d-58d6-4659-9bdd-f31830fde04c"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "Imported with warnings",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\pageproperties.config",
+      "name": "Page Properties",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": false,
+          "name": "showBreadcrumb",
+          "path": "Property/showBreadcrumb",
+          "oldValue": null,
+          "newValue": "Property 'showBreadcrumb' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": false,
+          "name": "showComingSoon",
+          "path": "Property/showComingSoon",
+          "oldValue": null,
+          "newValue": "Property 'showComingSoon' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": false,
+          "name": "showInMainMenu",
+          "path": "Property/showInMainMenu",
+          "oldValue": null,
+          "newValue": "Property 'showInMainMenu' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": false,
+          "name": "showInSiteMap",
+          "path": "Property/showInSiteMap",
+          "oldValue": null,
+          "newValue": "Property 'showInSiteMap' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": false,
+          "name": "showPageTitle",
+          "path": "Property/showPageTitle",
+          "oldValue": null,
+          "newValue": "Property 'showPageTitle' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": false,
+          "name": "showSharingIcons",
+          "path": "Property/showSharingIcons",
+          "oldValue": null,
+          "newValue": "Property 'showSharingIcons' cannot be created (missing DataType?)",
+          "change": "Warning"
+        }
+      ],
+      "key": "2531df67-da8e-43f6-885f-5121f357e959"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "Imported with warnings",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\pageseo.config",
+      "name": "Page SEO",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "3b76e20b-920c-448a-b3b0-2b58f110a346",
+          "newValue": "5d67e395-cc51-4b26-8c5c-4adc74e51f42",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "Page SEO",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-defrag color-black",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SEO",
+          "path": "Tabs/SEO",
+          "oldValue": "",
+          "newValue": "SEO",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Navigation",
+          "path": "Tabs/Navigation",
+          "oldValue": "",
+          "newValue": "Navigation",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Facebook Open Graph Meta Tags",
+          "path": "Tabs/Facebook Open Graph Meta Tags",
+          "oldValue": "",
+          "newValue": "Facebook Open Graph Meta Tags",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "SEO",
+          "path": "Tabs/SEO",
+          "oldValue": "",
+          "newValue": "SEO",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Twitter Cards",
+          "path": "Tabs/Twitter Cards",
+          "oldValue": "",
+          "newValue": "Twitter Cards",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "XML Sitemap Settings",
+          "path": "Tabs/XML Sitemap Settings",
+          "oldValue": "",
+          "newValue": "XML Sitemap Settings",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "Canonical/Key",
+          "oldValue": "04b3dd14-544f-44ec-aaa1-1d7ee412ddcd",
+          "newValue": "aadbc0e4-1aea-4465-b558-b4f00a6ddcea",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "Canonical/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Canonical",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "Canonical/Description",
+          "oldValue": "(Blank)",
+          "newValue": "Used in SEO, see: http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "Canonical/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "Canonical/SortOrder",
+          "oldValue": "0",
+          "newValue": "1",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "Canonical/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "Canonical/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Canonical",
+          "path": "Canonical",
+          "oldValue": "",
+          "newValue": "Canonical",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "excludedDocumentTypes/Key",
+          "oldValue": "7ebc1f2c-f878-43db-96cf-d699cc93b1f5",
+          "newValue": "652b112a-3e56-465f-b678-a14dbc7c26e1",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "excludedDocumentTypes/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Excluded Document Types",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "excludedDocumentTypes/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "excludedDocumentTypes/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "excludedDocumentTypes/SortOrder",
+          "oldValue": "0",
+          "newValue": "3",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "excludedDocumentTypes/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "excludedDocumentTypes/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "excludedDocumentTypes",
+          "path": "excludedDocumentTypes",
+          "oldValue": "",
+          "newValue": "Excluded Document Types",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "FBAppID/Key",
+          "oldValue": "c273b77b-6099-475d-bd8b-272c93816067",
+          "newValue": "86d02dcc-ae12-4aa8-8f7c-ab19515310a4",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "FBAppID/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Facebook App ID",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "FBAppID/Description",
+          "oldValue": "(Blank)",
+          "newValue": "In order to use Facebook Insights you must add the app ID to your page. Insights lets you view analytics for traffic to your site from Facebook. Find the app ID in your App Dashboard.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "FBAppID/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "FBAppID/SortOrder",
+          "oldValue": "0",
+          "newValue": "4",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "FBAppID/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "FBAppID/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "FBAppID",
+          "path": "FBAppID",
+          "oldValue": "",
+          "newValue": "Facebook App ID",
+          "change": "Create"
+        },
+        {
+          "success": false,
+          "name": "hideFromXmlSitemap",
+          "path": "Property/hideFromXmlSitemap",
+          "oldValue": null,
+          "newValue": "Property 'hideFromXmlSitemap' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "menuDisplayImage/Key",
+          "oldValue": "d4cae908-42a2-45bc-90cb-06e3385bf5f9",
+          "newValue": "6039b6c6-764c-4cf3-9d68-1ca647f53017",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "menuDisplayImage/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Menu Display Image",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "menuDisplayImage/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "menuDisplayImage/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "menuDisplayImage/SortOrder",
+          "oldValue": "0",
+          "newValue": "2",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "menuDisplayImage/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "menuDisplayImage/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "menuDisplayImage",
+          "path": "menuDisplayImage",
+          "oldValue": "",
+          "newValue": "Menu Display Image",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "menuDisplayName/Key",
+          "oldValue": "2bbcb635-f921-4aa5-bf7f-d8d97ddbd52c",
+          "newValue": "566c1388-cdae-4fc6-89d6-0aabbdd5897f",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "menuDisplayName/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Menu Display Name",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "menuDisplayName/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "menuDisplayName/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "menuDisplayName/SortOrder",
+          "oldValue": "0",
+          "newValue": "1",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "menuDisplayName/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "menuDisplayName/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "menuDisplayName",
+          "path": "menuDisplayName",
+          "oldValue": "",
+          "newValue": "Menu Display Name",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "metaAuthor/Key",
+          "oldValue": "a93ee3fb-2ab9-453c-9dbe-a39ca249eb02",
+          "newValue": "a8a014df-4559-4154-9659-c6ac7f93b1f1",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "metaAuthor/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Author",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "metaAuthor/Description",
+          "oldValue": "(Blank)",
+          "newValue": "The name of the page’s author.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "metaAuthor/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "metaAuthor/SortOrder",
+          "oldValue": "0",
+          "newValue": "2",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "metaAuthor/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "metaAuthor/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "metaAuthor",
+          "path": "metaAuthor",
+          "oldValue": "",
+          "newValue": "Author",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "metaDescription/Key",
+          "oldValue": "e27b3852-9446-4ddd-986a-fd17fdde059f",
+          "newValue": "450cec4f-f1b5-412a-a517-0cbd8c6abb2d",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "metaDescription/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Meta Description",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "metaDescription/Description",
+          "oldValue": "(Blank)",
+          "newValue": "A brief description of the content on your page. This text is shown below the title in a google search result The ideal length is between 130 and 155 characters.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "metaDescription/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "metaDescription/SortOrder",
+          "oldValue": "0",
+          "newValue": "3",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "metaDescription/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "metaDescription/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "metaDescription",
+          "path": "metaDescription",
+          "oldValue": "",
+          "newValue": "Meta Description",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "metaKeywords/Key",
+          "oldValue": "66c0ecd8-1aeb-4f5f-9d5c-df62db454cf2",
+          "newValue": "5df31656-9aef-45ad-bb5e-8fc0deb66622",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "metaKeywords/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Meta keywords",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "metaKeywords/Description",
+          "oldValue": "(Blank)",
+          "newValue": "Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "metaKeywords/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "metaKeywords/SortOrder",
+          "oldValue": "0",
+          "newValue": "4",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "metaKeywords/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "metaKeywords/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "metaKeywords",
+          "path": "metaKeywords",
+          "oldValue": "",
+          "newValue": "Meta keywords",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "metaTagBlock/Key",
+          "oldValue": "fc59db7d-22d0-4902-9ad7-a709ef6e0d4c",
+          "newValue": "bfe7b81e-351c-4388-b340-a30cccb6ddb0",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "metaTagBlock/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Meta Tag Block",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "metaTagBlock/Description",
+          "oldValue": "(Blank)",
+          "newValue": "Can input any text what you want to render in the HTML HEAD. For example: \n<meta name=\"keywords\" content=\"{Title}\"><meta http-equiv=\"charset\" content=\"{Charset}\">",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "metaTagBlock/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "metaTagBlock/SortOrder",
+          "oldValue": "0",
+          "newValue": "5",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "metaTagBlock/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "metaTagBlock/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "metaTagBlock",
+          "path": "metaTagBlock",
+          "oldValue": "",
+          "newValue": "Meta Tag Block",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "OGDescription/Key",
+          "oldValue": "4a2525c7-16fc-4cda-a882-39225cc37e44",
+          "newValue": "d9116621-0f91-480d-8789-602a9dd208ff",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "OGDescription/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Description",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "OGDescription/Description",
+          "oldValue": "(Blank)",
+          "newValue": "A brief description of the content, usually between 2 and 4 sentences. This will displayed below the title of the post on Facebook.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "OGDescription/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "OGDescription/SortOrder",
+          "oldValue": "0",
+          "newValue": "2",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "OGDescription/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "OGDescription/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "OGDescription",
+          "path": "OGDescription",
+          "oldValue": "",
+          "newValue": "Description",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "OGImage/Key",
+          "oldValue": "1ce6cf90-3c05-4ab1-a6fa-1a65fd751119",
+          "newValue": "0d41c37a-3ec3-4e6f-ba4b-6ea758c4e52a",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "OGImage/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Image",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "OGImage/Description",
+          "oldValue": "(Blank)",
+          "newValue": "The URL of the image that appears when someone shares the content to Facebook.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "OGImage/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "OGImage/SortOrder",
+          "oldValue": "0",
+          "newValue": "3",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "OGImage/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "OGImage/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "OGImage",
+          "path": "OGImage",
+          "oldValue": "",
+          "newValue": "Image",
+          "change": "Create"
+        },
+        {
+          "success": false,
+          "name": "OGLocale",
+          "path": "Property/OGLocale",
+          "oldValue": null,
+          "newValue": "Property 'OGLocale' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "OGTitle/Key",
+          "oldValue": "6f9bef49-f026-4c8d-b6b5-4b88bb4e558e",
+          "newValue": "0cf2ed2d-5ec6-48f3-881a-71150c858dd3",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "OGTitle/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Title",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "OGTitle/Description",
+          "oldValue": "(Blank)",
+          "newValue": "The title of your article without any branding such as your site name.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "OGTitle/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "OGTitle/SortOrder",
+          "oldValue": "0",
+          "newValue": "1",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "OGTitle/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "OGTitle/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "OGTitle",
+          "path": "OGTitle",
+          "oldValue": "",
+          "newValue": "Title",
+          "change": "Create"
+        },
+        {
+          "success": false,
+          "name": "OGType",
+          "path": "Property/OGType",
+          "oldValue": null,
+          "newValue": "Property 'OGType' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "OGURL/Key",
+          "oldValue": "d1a2ed50-5727-4332-bfaf-46bd0e680443",
+          "newValue": "a3b31355-e14b-41a3-85ee-6d2e59f95e1c",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "OGURL/Name",
+          "oldValue": "(Blank)",
+          "newValue": "URL",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "OGURL/Description",
+          "oldValue": "(Blank)",
+          "newValue": "The canonical URL for your page. This should be the undecorated URL, without session variables, user identifying parameters, or counters. Likes and Shares for this URL will aggregate at this URL. For example, mobile domain URLs should point to the desktop version of the URL as the canonical URL to aggregate Likes and Shares across different versions of the page.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "OGURL/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "OGURL/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "OGURL/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "OGURL",
+          "path": "OGURL",
+          "oldValue": "",
+          "newValue": "URL",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "pageTitle2/Key",
+          "oldValue": "d9a6e98b-a5e2-4a22-803b-84559673de4e",
+          "newValue": "d84f214a-90ce-4900-96b9-8c0731c16850",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "pageTitle2/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Page Title",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "pageTitle2/Description",
+          "oldValue": "(Blank)",
+          "newValue": "The title of the page, this is also the first text in a google search result.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "pageTitle2/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "pageTitle2/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "pageTitle2/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "pageTitle2",
+          "path": "pageTitle2",
+          "oldValue": "",
+          "newValue": "Page Title",
+          "change": "Create"
+        },
+        {
+          "success": false,
+          "name": "searchEngineChangeFrequency",
+          "path": "Property/searchEngineChangeFrequency",
+          "oldValue": null,
+          "newValue": "Property 'searchEngineChangeFrequency' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": false,
+          "name": "searchEngineRelativePriority",
+          "path": "Property/searchEngineRelativePriority",
+          "oldValue": null,
+          "newValue": "Property 'searchEngineRelativePriority' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": false,
+          "name": "TwitterCardType",
+          "path": "Property/TwitterCardType",
+          "oldValue": null,
+          "newValue": "Property 'TwitterCardType' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "TwitterDescription/Key",
+          "oldValue": "e7d8ad95-0698-420e-9b7c-407e7f22a5e3",
+          "newValue": "6a9b6209-a8c5-4244-8b5e-65f1bddc3d61",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "TwitterDescription/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Description",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "TwitterDescription/Description",
+          "oldValue": "(Blank)",
+          "newValue": "A description that concisely summarizes the content as appropriate for presentation within a Tweet. You should not re-use the title as the description or use this field to describe the general services provided by the website.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "TwitterDescription/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "TwitterDescription/SortOrder",
+          "oldValue": "0",
+          "newValue": "3",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "TwitterDescription/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "TwitterDescription/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "TwitterDescription",
+          "path": "TwitterDescription",
+          "oldValue": "",
+          "newValue": "Description",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "TwitterImage/Key",
+          "oldValue": "b758e983-26da-4621-bfd0-e0be3f1f9f41",
+          "newValue": "93a20399-6d29-4bb4-abd7-f3aee9d20ee6",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "TwitterImage/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Image",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "TwitterImage/Description",
+          "oldValue": "(Blank)",
+          "newValue": "A URL to a unique image representing the content of the page. You should not use a generic image such as your website logo, author photo, or other image that spans multiple pages. Images for this Card support an aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Images must be less than 5MB in size. JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF will be used. SVG is not supported.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "TwitterImage/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "TwitterImage/SortOrder",
+          "oldValue": "0",
+          "newValue": "4",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "TwitterImage/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "TwitterImage/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "TwitterImage",
+          "path": "TwitterImage",
+          "oldValue": "",
+          "newValue": "Image",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "TwitterImageAlt/Key",
+          "oldValue": "90117da7-c3eb-44be-a1cb-4fc7b7016cda",
+          "newValue": "2d27779d-4639-4347-8389-a79033a71ee1",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "TwitterImageAlt/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Image Alt",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "TwitterImageAlt/Description",
+          "oldValue": "(Blank)",
+          "newValue": "A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "TwitterImageAlt/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "TwitterImageAlt/SortOrder",
+          "oldValue": "0",
+          "newValue": "5",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "TwitterImageAlt/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "TwitterImageAlt/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "TwitterImageAlt",
+          "path": "TwitterImageAlt",
+          "oldValue": "",
+          "newValue": "Image Alt",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "TwitterSite/Key",
+          "oldValue": "9b3fd0c7-5a75-4135-9219-60a9f9c99a27",
+          "newValue": "7ae19c18-219f-4de2-bc0a-48521247f0e6",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "TwitterSite/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Site",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "TwitterSite/Description",
+          "oldValue": "(Blank)",
+          "newValue": "The Twitter @username the card should be attributed to.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "TwitterSite/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "TwitterSite/SortOrder",
+          "oldValue": "0",
+          "newValue": "1",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "TwitterSite/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "TwitterSite/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "TwitterSite",
+          "path": "TwitterSite",
+          "oldValue": "",
+          "newValue": "Site",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "TwitterTitle/Key",
+          "oldValue": "918f8ca2-526b-487a-9f8f-187bbe845c60",
+          "newValue": "e2e92338-09a7-43eb-991a-4259699f733c",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "TwitterTitle/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Title",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "TwitterTitle/Description",
+          "oldValue": "(Blank)",
+          "newValue": "A concise title for the related content.",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "TwitterTitle/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "TwitterTitle/SortOrder",
+          "oldValue": "0",
+          "newValue": "2",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "TwitterTitle/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "TwitterTitle/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "TwitterTitle",
+          "path": "TwitterTitle",
+          "oldValue": "",
+          "newValue": "Title",
+          "change": "Create"
+        },
+        {
+          "success": false,
+          "name": "umbracoNaviHide77",
+          "path": "Property/umbracoNaviHide77",
+          "oldValue": null,
+          "newValue": "Property 'umbracoNaviHide77' cannot be created (missing DataType?)",
+          "change": "Warning"
+        }
+      ],
+      "key": "5d67e395-cc51-4b26-8c5c-4adc74e51f42"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\pagetitles.config",
+      "name": "Page Title",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "841790bf-86fe-4a9d-b5f4-9229c6988ba9",
+          "newValue": "69599cbd-c9c7-4f2b-8947-ab2fa73fc271",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "Page Title",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-defrag",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Properties",
+          "path": "Tabs/Properties",
+          "oldValue": "",
+          "newValue": "Properties",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Properties",
+          "path": "Tabs/Properties",
+          "oldValue": "",
+          "newValue": "Properties",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "pageTitle/Key",
+          "oldValue": "0b46bd1e-1f3d-48a2-8c8c-8518428d7f4b",
+          "newValue": "befb1b23-9c4e-4f50-a5f9-ccb611410634",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "pageTitle/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Page Title",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "pageTitle/Description",
+          "oldValue": "(Blank)",
+          "newValue": "to override the page name",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "pageTitle/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "pageTitle/SortOrder",
+          "oldValue": "0",
+          "newValue": "-1",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "pageTitle/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "pageTitle/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "pageTitle",
+          "path": "pageTitle",
+          "oldValue": "",
+          "newValue": "Page Title",
+          "change": "Create"
+        }
+      ],
+      "key": "69599cbd-c9c7-4f2b-8947-ab2fa73fc271"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\dt_formcontactus.config",
+      "name": "Form Contact us",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "ce360971-f82e-4275-b1cd-fbb6466851a3",
+          "newValue": "e6ba0a68-5728-49db-96ac-8bce1c985bcc",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "Form Contact us",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-umb-contour color-light-blue",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "IsListView",
+          "path": "",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": false,
+          "name": "DefaultTemplate",
+          "path": "DefaultTemplate",
+          "oldValue": "(Blank)",
+          "newValue": "Cannot find Template",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Compositions",
+          "path": "Info",
+          "oldValue": "(Blank)",
+          "newValue": "pageProperties,pageSEO",
+          "change": "Update"
+        }
+      ],
+      "key": "e6ba0a68-5728-49db-96ac-8bce1c985bcc"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "Imported with warnings",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\dt_eventsitem.config",
+      "name": "Events item",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "64d53cdf-9c78-4c26-a30a-e3035db05178",
+          "newValue": "de511324-a6cd-4117-a4f9-b1e26fb77dac",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "Events item",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-calendar color-light-blue",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Content",
+          "path": "Tabs/Content",
+          "oldValue": "",
+          "newValue": "Content",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Content",
+          "path": "Tabs/Content",
+          "oldValue": "",
+          "newValue": "Content",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "dateEnd/Key",
+          "oldValue": "5b788cd8-aaf6-4982-9ad4-64215cca2e54",
+          "newValue": "5eebdc35-126d-4aff-b26c-23c362183c36",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "dateEnd/Name",
+          "oldValue": "(Blank)",
+          "newValue": "DateEnd",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "dateEnd/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Mandatory",
+          "path": "dateEnd/Mandatory",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "dateEnd/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "dateEnd/SortOrder",
+          "oldValue": "0",
+          "newValue": "3",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "dateEnd/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "dateEnd/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "dateEnd",
+          "path": "dateEnd",
+          "oldValue": "",
+          "newValue": "DateEnd",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "dateStart/Key",
+          "oldValue": "59690060-c473-4a8c-afe6-ea1d9b31a4d0",
+          "newValue": "02c429e5-3344-49c3-9455-c7c9c532d170",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "dateStart/Name",
+          "oldValue": "(Blank)",
+          "newValue": "DateStart",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "dateStart/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Mandatory",
+          "path": "dateStart/Mandatory",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "dateStart/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "dateStart/SortOrder",
+          "oldValue": "0",
+          "newValue": "2",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "dateStart/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "dateStart/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "dateStart",
+          "path": "dateStart",
+          "oldValue": "",
+          "newValue": "DateStart",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "details/Key",
+          "oldValue": "0b75517d-573c-4908-a511-d8d3865cd466",
+          "newValue": "384bc648-ebb0-464c-ac21-fd7716ed528e",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "details/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Details",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "details/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Mandatory",
+          "path": "details/Mandatory",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "details/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "details/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "details/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "details",
+          "path": "details",
+          "oldValue": "",
+          "newValue": "Details",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "eventURL/Key",
+          "oldValue": "6f18505b-c5a5-4a8c-9f10-db70b43342b5",
+          "newValue": "e6fafe6e-f79f-4296-8b3e-749e96a088a4",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "eventURL/Name",
+          "oldValue": "(Blank)",
+          "newValue": "EventURL",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "eventURL/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "eventURL/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "eventURL/SortOrder",
+          "oldValue": "0",
+          "newValue": "5",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "eventURL/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "eventURL/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "eventURL",
+          "path": "eventURL",
+          "oldValue": "",
+          "newValue": "EventURL",
+          "change": "Create"
+        },
+        {
+          "success": false,
+          "name": "flag",
+          "path": "Property/flag",
+          "oldValue": null,
+          "newValue": "Property 'flag' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": false,
+          "name": "hideTextOnBackground",
+          "path": "Property/hideTextOnBackground",
+          "oldValue": null,
+          "newValue": "Property 'hideTextOnBackground' cannot be created (missing DataType?)",
+          "change": "Warning"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "image/Key",
+          "oldValue": "5271aed7-592e-400f-b99d-56dadbf227a9",
+          "newValue": "d746659d-179d-49f2-a2f8-d2e9f4d2ccc4",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "image/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Image",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "image/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "image/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "image/SortOrder",
+          "oldValue": "0",
+          "newValue": "4",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "image/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "image/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "image",
+          "path": "image",
+          "oldValue": "",
+          "newValue": "Image",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "location/Key",
+          "oldValue": "3994f0bc-5d77-43b9-954b-5ca41736f931",
+          "newValue": "959b5756-8eeb-4b2d-afae-6c8ba3602ae7",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "location/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Location",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "location/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Mandatory",
+          "path": "location/Mandatory",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "location/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "location/SortOrder",
+          "oldValue": "0",
+          "newValue": "1",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "location/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "location/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "location",
+          "path": "location",
+          "oldValue": "",
+          "newValue": "Location",
+          "change": "Create"
+        },
+        {
+          "success": false,
+          "name": "DefaultTemplate",
+          "path": "DefaultTemplate",
+          "oldValue": "(Blank)",
+          "newValue": "Cannot find Template",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Compositions",
+          "path": "Info",
+          "oldValue": "(Blank)",
+          "newValue": "pageProperties,pageSEO,pageTitles",
+          "change": "Update"
+        }
+      ],
+      "key": "de511324-a6cd-4117-a4f9-b1e26fb77dac"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\dt_newsitem.config",
+      "name": "News item",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "1f16be21-6803-47d7-aef1-75ee3c7e5017",
+          "newValue": "591b30a4-08e4-40af-9f54-f9835d3dec5f",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "News item",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-newspaper-alt color-light-blue",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Content",
+          "path": "Tabs/Content",
+          "oldValue": "",
+          "newValue": "Content",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "date/Key",
+          "oldValue": "2ef096f3-6015-4d9d-a77c-cb1eb1a34bc6",
+          "newValue": "1c84b93a-6fda-4257-afbd-a66a2a909d7a",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "date/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Date",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "date/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Mandatory",
+          "path": "date/Mandatory",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "date/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "date/SortOrder",
+          "oldValue": "0",
+          "newValue": "3",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "date/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "date/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "date",
+          "path": "date",
+          "oldValue": "",
+          "newValue": "Date",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "details/Key",
+          "oldValue": "8ed063cf-d48a-4985-bcfb-d76c4b8bfe11",
+          "newValue": "0b49499d-d144-4109-bc24-38a59ee8f699",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "details/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Details",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "details/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Mandatory",
+          "path": "details/Mandatory",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "details/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "details/SortOrder",
+          "oldValue": "0",
+          "newValue": "2",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "details/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "details/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "details",
+          "path": "details",
+          "oldValue": "",
+          "newValue": "Details",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "hideInnerImage/Key",
+          "oldValue": "8c625ba9-b9b8-4751-a21d-24c07b407c5d",
+          "newValue": "bfcff4a3-ca0d-4ec3-b545-db1899998625",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "hideInnerImage/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Hide Inner Image",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "hideInnerImage/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Mandatory",
+          "path": "hideInnerImage/Mandatory",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "hideInnerImage/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "hideInnerImage/SortOrder",
+          "oldValue": "0",
+          "newValue": "5",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "hideInnerImage/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "hideInnerImage/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "hideInnerImage",
+          "path": "hideInnerImage",
+          "oldValue": "",
+          "newValue": "Hide Inner Image",
+          "change": "Create"
+        },
+        {
+          "success": true,
+          "name": "Key",
+          "path": "image/Key",
+          "oldValue": "b1d16a01-a4da-40f5-9e6b-9b0229564ed0",
+          "newValue": "799e18ca-0879-402e-b84d-5b4180908d6a",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "image/Name",
+          "oldValue": "(Blank)",
+          "newValue": "Image",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Description",
+          "path": "image/Description",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Validation",
+          "path": "image/RegEx",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "SortOrder",
+          "path": "image/SortOrder",
+          "oldValue": "0",
+          "newValue": "4",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "MandatoryMessage",
+          "path": "image/MandatoryMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "ValidationRegExpMessage",
+          "path": "image/ValidationRegExpMessage",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "Property/Variations",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "image",
+          "path": "image",
+          "oldValue": "",
+          "newValue": "Image",
+          "change": "Create"
+        },
+        {
+          "success": false,
+          "name": "DefaultTemplate",
+          "path": "DefaultTemplate",
+          "oldValue": "(Blank)",
+          "newValue": "Cannot find Template",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Compositions",
+          "path": "Info",
+          "oldValue": "(Blank)",
+          "newValue": "pageProperties,pageSEO,pageTitles",
+          "change": "Update"
+        }
+      ],
+      "key": "591b30a4-08e4-40af-9f54-f9835d3dec5f"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\dt_faq.config",
+      "name": "FAQ",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "06b9e735-3651-4899-afe2-91bab6672793",
+          "newValue": "e2ea1d03-ea75-4a36-afec-31ed9f77893e",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "FAQ",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-columns color-light-blue",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "IsListView",
+          "path": "",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Compositions",
+          "path": "Info",
+          "oldValue": "(Blank)",
+          "newValue": "pageProperties",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Allowed",
+          "path": "/Structure",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        }
+      ],
+      "key": "e2ea1d03-ea75-4a36-afec-31ed9f77893e"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\dt_numbers.config",
+      "name": "Numbers",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "a0200618-30bc-4327-9ce7-69cef349e093",
+          "newValue": "c0a79e7d-0441-48d9-9b33-96508c427c36",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "Numbers",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-activity color-light-blue",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "IsListView",
+          "path": "",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Compositions",
+          "path": "Info",
+          "oldValue": "(Blank)",
+          "newValue": "pageProperties",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Allowed",
+          "path": "/Structure",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        }
+      ],
+      "key": "c0a79e7d-0441-48d9-9b33-96508c427c36"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\dt_events.config",
+      "name": "Events",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "ce49a215-491f-4b58-867a-d4027f26ceda",
+          "newValue": "1fc2c919-8d10-4118-a6ac-b76cf973f817",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "Events",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-calendar color-light-blue",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "IsListView",
+          "path": "",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": false,
+          "name": "DefaultTemplate",
+          "path": "DefaultTemplate",
+          "oldValue": "(Blank)",
+          "newValue": "Cannot find Template",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Compositions",
+          "path": "Info",
+          "oldValue": "(Blank)",
+          "newValue": "pageProperties,pageSEO",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Allowed",
+          "path": "/Structure",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        }
+      ],
+      "key": "1fc2c919-8d10-4118-a6ac-b76cf973f817"
+    },
+    {
+      "handlerAlias": "ContentTypeHandler",
+      "success": true,
+      "itemType": "IContentType",
+      "message": "",
+      "exception": null,
+      "change": "Import",
+      "fileName": "C:\\Users\\alfy3\\source\\repos\\GAFT_2025\\GAFT_2025\\uSync\\v9\\ContentTypes\\dt_news.config",
+      "name": "News",
+      "path": null,
+      "requiresPostProcessing": true,
+      "detailMessage": null,
+      "details": [
+        {
+          "success": true,
+          "name": "Key",
+          "path": "",
+          "oldValue": "e936358e-e63f-490a-9b31-71f4b50d7f2e",
+          "newValue": "36b53dcc-69a5-4429-be8f-5bd3cc2fadc7",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Name",
+          "path": "",
+          "oldValue": "(Blank)",
+          "newValue": "News",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Icon",
+          "path": "",
+          "oldValue": "icon-folder",
+          "newValue": "icon-newspaper-alt color-light-blue",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Variations",
+          "path": "",
+          "oldValue": "Nothing",
+          "newValue": "Culture",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "IsListView",
+          "path": "",
+          "oldValue": "False",
+          "newValue": "True",
+          "change": "Update"
+        },
+        {
+          "success": false,
+          "name": "DefaultTemplate",
+          "path": "DefaultTemplate",
+          "oldValue": "(Blank)",
+          "newValue": "Cannot find Template",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Compositions",
+          "path": "Info",
+          "oldValue": "(Blank)",
+          "newValue": "pageProperties,pageSEO",
+          "change": "Update"
+        },
+        {
+          "success": true,
+          "name": "Allowed",
+          "path": "/Structure",
+          "oldValue": "(Blank)",
+          "newValue": "(Blank)",
+          "change": "Update"
+        }
+      ],
+      "key": "36b53dcc-69a5-4429-be8f-5bd3cc2fadc7"
+    }
+  ],
+  "date": "2025-04-16T16:20:56.7614635+03:00",
+  "username": "malfy@interactive.sa",
+  "method": "Import",
+  "filePath": null,
+  "changes": 16,
+  "total": 18
+}

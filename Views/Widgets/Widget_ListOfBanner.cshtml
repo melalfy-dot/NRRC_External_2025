@@ -1,0 +1,80 @@
+﻿@using Umbraco.Cms.Core.Routing
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+@{
+    var _Widget = (Widget_ListOfBanner)Model.Content;
+}
+@if (_Widget != null && _Widget.HideWidget is false)
+{
+    <section class="bannerMenu">
+        <div class="swiper homBanner">
+            <div class="swiper-wrapper">
+
+                @if (_Widget.BannerList != null)
+                {
+                    var items = _Widget?.BannerList?
+                    .Where(p => !p.Content.Value<Boolean>(nameof(Banner.Hide)))
+                    .Where(p =>
+                    (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) == DateTime.MinValue && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) == DateTime.MinValue)
+                    || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) <= DateTime.Now && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) >= DateTime.Now)
+                    || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) <= DateTime.Now && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) == DateTime.MinValue)
+                    || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) == DateTime.MinValue && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) >= DateTime.Now));
+
+                    if (items != null && items.Count() > 0)
+                    {
+                        foreach (var item in items)
+                        {
+                            var _Item = (Banner)item.Content;
+                            if (_Item != null)
+                            {
+                                var imgUrl = _Item?.LinkImage?.Url(IPublishedUrlProvider);
+                                var imgAltText = _Item?.LinkImage?.Value<string>(nameof(Image.AltText));
+                                <div class="swiper-slide">
+                                    <div class="contentBanner">
+                                        <div class="bg-video-wrap">
+                                            <img src="@imgUrl" alt="@imgAltText" />
+                                        </div>
+                                        <div class="container">
+                                            <div class="BNRtxt">
+                                                <h1 class="">
+                                                    @_Item?.Title
+                                                </h1>
+                                                <p>
+                                                    @_Item?.LinkDetails
+                                                </p>
+                                                @if (string.IsNullOrEmpty(_Item?.Link.ToLinkURL("")) is false)
+                                                {
+                                                    <div class="white-btn">
+                                                        <a href="@_Item?.Link" class="">
+                                                            <span> @_Item?.Link?.Name </span>
+                                                            <img src="/images/shared/arrow-left-black.svg" alt="" />
+                                                        </a>
+                                                    </div>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <!-- end slider -->
+                        }
+                    }
+                }
+
+            </div>
+            <div class="customPagi bannerPagi">
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- end content of slider -->
+        <div class="chatEvent">
+            <a href="#!" class="bgIcon">
+                <img src="/images/shared/chatIcon.svg" alt="" />
+            </a>
+        </div>
+        <!-- end chat -->
+    </section>
+}

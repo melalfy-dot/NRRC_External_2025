@@ -1,0 +1,81 @@
+﻿@using Umbraco.Cms.Core.Routing
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+@{
+    var _Widget = (Widget_ListOfServices)Model.Content;
+    @if (_Widget != null && _Widget.Services != null && _Widget.Services.Count > 0 && _Widget.HideWidget is false)
+    {
+        var items = _Widget.Services.Where(a => a.Content.Value<Boolean>(nameof(Partner.Hide)) is false);
+
+        <!-- start services -->
+        <section class="ourServicesSec">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="textSec">
+                            <h2 class="font30"> @_Widget?.Title</h2>
+                            <div class="p16">
+                                @Html.Raw(_Widget?.Details)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="swiper homeServices disableDesktop">
+                            <div class="swiper-wrapper">
+                                @if (items != null && items.Count() > 0)
+                                {
+                                    @foreach (var item in items)
+                                    {
+                                        var _Item = (Service)item.Content;
+                                        if (_Item != null)
+                                        {
+                                            var IconUrl = _Item?.Icon?.Url(IPublishedUrlProvider);
+                                            var imgAltText = _Item?.Icon?.Value<string>(nameof(Image.AltText));
+
+                                            <div class="swiper-slide">
+                                                <div class="mainCardWithBtn">
+                                                    <div class="bgIcon opacityGreen">
+                                                        <img src="@IconUrl" alt="@imgAltText" />
+                                                    </div>
+                                                    <h3 class="font18">@_Item?.Title</h3>
+                                                    <p class="p16">
+                                                        @_Item?.Details
+                                                    </p>
+                                                    <div class="green-btn">
+                                                        <a href="@_Item?.ServiceUrl?.Url" class="">
+                                                            <span>@_Item?.ServiceUrl?.Name</span>
+                                                            <img src="/images/shared/arrow-left.svg" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end slide -->
+                                        }
+                                    }
+                                }
+                            </div>
+
+                            <div class="showInMob">
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end text -->
+                    <div class="col-md-6">
+                    </div>
+                    <!-- end card -->
+                    <div class="col-md-6">
+                    </div>
+                    <!-- end card -->
+                </div>
+            </div>
+        </section>
+        <!-- end services -->
+    }
+
+}

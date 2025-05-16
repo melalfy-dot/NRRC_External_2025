@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<object>
+
+<section class="inContent">
+    <div class="container">
+        <div class="box-white padding5">
+            <div class="alert alert-warning marginb0">
+                @SharedHelper.GetDictionaryValue("NoRecords", Umbraco)
+                @* @Umbraco.GetDictionaryValue("NoRecords") *@
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@if (!string.IsNullOrEmpty(Model.Value<string>("pageContentDetails").ToStringNull()))
+{
+    <section class="inContent">
+        <div class="container">
+            <div class="box-white">
+                <div class="row">
+                    <div class="col-lg-12 content-details PageContent_vw">
+                        @Html.Raw(Model.Value<string>("pageContentDetails"))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

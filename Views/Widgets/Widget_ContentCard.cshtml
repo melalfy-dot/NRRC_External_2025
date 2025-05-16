@@ -1,0 +1,30 @@
+﻿@using Umbraco.Cms.Core.Routing
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+@{
+    var _Widget = (Widget_ContentCard)Model.Content;
+
+    if (_Widget != null && _Widget.Hide is false)
+    {
+        var iconImage_Url = _Widget?.IconOrImage?.Url(IPublishedUrlProvider);
+        var imgAltText = _Widget?.IconOrImage?.Value<string>(nameof(Image.AltText));
+        
+        <div class="col-12">
+            <div class="aboutUs-card">
+                <div class="logo">
+                    <img src="@iconImage_Url" alt="@imgAltText">
+                </div>
+                <h2 class="font18">
+                    @Html.Raw(_Widget?.Title)
+                </h2>
+                <div class="p16">
+                    @Html.Raw(_Widget?.Details)
+                </div>
+            </div>
+        </div>
+    }
+}
+
+

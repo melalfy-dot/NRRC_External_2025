@@ -1,0 +1,54 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListModel>
+@{
+    if (Model?.Any() != true) { return; }
+}
+<div class="umb-block-list">
+    @foreach (var block in Model)
+    {
+        if (block?.ContentUdi == null) { continue; }
+        var data = block.Content;
+
+        @await Html.PartialAsync("blocklist/Components/" + data.ContentType.Alias, block)
+    }
+</div>
+
+
+
+
+@* @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListModel>
+@{
+    if (Model?.Any() != true) { return; }
+}
+<div class="umb-block-list">
+    @foreach (var block in Model)
+    {
+        if (block?.ContentUdi == null) { continue; }
+        var data = block.Content;
+
+        var partialViewName = "blocklist/Components/" + data.ContentType.Alias;// + ".cshtml";
+
+        if (data.ContentType.Alias.ToLower().Contains("Widget_".ToLower()))
+        {
+            partialViewName = "/Views/Widgets/" + data.ContentType.Alias + ".cshtml";
+        }
+        try
+        {
+            @await Html.PartialAsync(partialViewName, data)
+        }
+        catch (InvalidOperationException)
+        {
+            try
+            {
+                @await Html.PartialAsync(partialViewName.Replace("Widget_", ""), data)
+            }
+            catch (InvalidOperationException)
+            {
+                <p>
+                    <strong>Could not render component of type: @(data.ContentType.Alias)</strong>
+                    <br />
+                    This likely happened because the partial view <em>@partialViewName</em> could not be found.
+                </p>
+            }
+        }
+    }
+</div> *@

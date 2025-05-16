@@ -1,0 +1,75 @@
+﻿@model Pager
+
+@{
+    var page = Model.Page;
+    var totalPages = Model.TotalPages;
+}
+
+@if (totalPages > 1)
+{
+    <div class="row" >
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+
+                @for (int p = 1; p < totalPages + 1; p++)
+                {
+                    <li class="page-item">
+                        <a href="#?" id="page@(p)" class="umbPagerLink_@(Model.PagerName) page-link  @(p == page ? "active" : string.Empty)">
+                            @p
+                        </a>
+                    </li>
+                }
+
+                @* @if (page > 1)
+            {
+            <li class="page-item">
+            <a href="?page=@(page - 1)&&query=@query&&date=@date&&order=@order" class="page-link arr " aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+            </a>
+            </li>
+            }
+            @for (int p = 1; p < totalPages + 1; p++)
+            {
+            <li class="page-item">
+            <a href="?page=@p&&query=@query&&date=@date&&order=@order" class="page-link @(p == page ? "active" : string.Empty)">@p</a>
+            </li>
+            }
+            @if (page < totalPages)
+            {
+            <li class="page-item">
+            <a href="?page=@(page + 1)&&query=@query&&date=@date&&order=@order" class="page-link arr" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+            </a>
+            </li>
+            } *@
+
+            </ul>
+        </nav>
+    </div>
+}
+
+@* 
+@if (!string.IsNullOrEmpty(Model.PagerName))
+{
+    @section Scripts {
+    <script>
+
+        $(document).ready(function () {
+
+            $(".@(Model.PagerName)").click(function () {
+                $("#Page").val($(this).attr("id").replace("page", ""));
+                window.location = window.location.href.split("?")[0]
+                    + "?Page=" + $("#Page").val()
+                    //+ "&PageSize=" + $("#PageSize").val()
+                    //+ "&Keyword=" + $("#Keyword").val()
+                    ;
+            });
+
+        });
+
+    </script>
+    }
+}
+ *@

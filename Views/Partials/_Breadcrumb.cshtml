@@ -1,0 +1,105 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@{
+    var currentPage = Umbraco.AssignedContentItem;
+    var rootPage = Umbraco.ContentAtRoot().FirstOrDefault(a => a.ContentType.Alias == Dt_HomePage.ModelTypeAlias); // Assuming the first node is the home page
+    bool isHomePage = currentPage != null && currentPage.Id == rootPage?.Id;
+    var ShowBreadcrumb = Model.Value<bool>(nameof(PageProperties.ShowBreadcrumb));
+    bool IsArabic = true;
+    string Lang_URL = "/";
+
+    if (Model != null && Model.GetCultureFromDomains() != null && !string.IsNullOrEmpty(Model.GetCultureFromDomains()))
+    {
+        if (Model.GetCultureFromDomains().ToLower().Contains("en"))
+        {
+            IsArabic = false;
+            Lang_URL = "/en";
+        }
+        else
+        {
+            IsArabic = true;
+            Lang_URL = "/";
+        }
+    }
+
+    var currentPage_title = Model.ToPageTitle();
+    var currentPage_Description = Model?.Value(nameof(PageDescription.Description)).ToStringNull();
+
+    // int index = 1;
+    // var hideTitle = false;
+}
+
+@if (isHomePage is false && ShowBreadcrumb)
+{
+    var list = Model?.Ancestors<IPublishedContent>().Reverse();
+
+    <section class="innerBanner">
+        <div class="container container2">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb">
+                        <ul class="items">
+                            @if (list?.Count() > 0)
+                            {
+                                @* <li>
+                                    <a href="@(Lang_URL)" class="home">
+                                        <img src="/images/shared/GAFTLogo.svg" alt="">
+                                    </a>
+                                </li> *@
+                                foreach (var item in list)
+                                {
+                                    var item_PageTitle = item.ToPageTitle();
+
+                                    var item_url = item.Url();
+                                    <li>
+                                        @if (currentPage?.Id == item.Id)
+                                        {
+                                            <span>
+                                                @item_PageTitle
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <a href="@item_url">
+                                                @item_PageTitle
+                                            </a>
+                                        }
+                                    </li>
+                                }
+                                <li>
+                                    <span>
+                                        @currentPage_title
+                                    </span>
+                                </li>
+                               
+                            }
+                        </ul>
+                    </div>
+                    <!-- end breadcrumb -->
+                </div>
+            </div>
+        </div>
+        <div class="container container2">
+            <div class="row">
+                <div class="col-12">
+                    <div class="titleBnr">
+                        <h1 class="">
+                            @currentPage_title
+                        </h1>
+                        <p>
+                            @currentPage_Description
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+}

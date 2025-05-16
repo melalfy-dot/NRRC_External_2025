@@ -1,0 +1,56 @@
+﻿@using Umbraco.Cms.Core.Routing
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+
+@{
+    var _Widget = (Widget_ListOfNumbers)Model.Content;
+    @if (_Widget != null && _Widget.Numbers != null && _Widget.Numbers.Count > 0 && _Widget.HideWidget is false)
+    {
+        var items = _Widget.Numbers.Where(a => a.Content.Value<Boolean>(nameof(Number.Hide)) is false);
+
+        <!-- start our numbers -->
+        <section class="ourNums">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="textSec">
+                            <h2 class="font30">@_Widget?.Title</h2>
+                            <div class="p16">
+                                @Html.Raw(_Widget?.Details)
+                            </div>
+                        </div>
+                    </div>
+                    @if (items != null && items.Count() > 0)
+                    {
+                        @foreach (var item in items)
+                        {
+                            var _Item = (Number)item.Content;
+                            var IconUrl = _Item?.IconI?.Url(IPublishedUrlProvider);
+                            var imgAltText = _Item?.IconI?.Value<string>(nameof(Image.AltText));
+
+                            if (_Item != null)
+                            {
+                                <div class="col-lg-3">
+                                    <div class="wapperNum ">
+                                        <div class="bgIcon opacityGreen">
+                                            <img src="@IconUrl" alt="@imgAltText">
+                                        </div>
+                                        <div class="boxNum">
+                                            <h4 class="counter" style="visibility: visible;">@_Item?.NumberValue</h4>
+                                            <span class="p16">@_Item?.Title</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        }
+                    }
+                </div>
+            </div>
+        </section>
+        <!-- end our numbers -->
+    }
+
+}

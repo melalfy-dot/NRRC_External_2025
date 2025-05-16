@@ -1,0 +1,186 @@
+﻿@using Umbraco.Cms.Core.Routing
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+@{
+    var _Widget = (Widget_FooterLinks)Model.Content;
+    <footer class="footerDGA">
+        @if (_Widget != null && _Widget.Links != null && _Widget.Links.Count > 0 && _Widget.HideWidget is false)
+        {
+            var AllMenus = _Widget.Links.Where(a => !a.Content.Value<Boolean>(nameof(Widget_ListOfLinks.HideWidget)));
+            if (AllMenus != null && AllMenus.Count() > 0)
+            {
+                var Menu_1 = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Menu 1");
+                var Menu_2 = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Menu 2");
+                var Menu_3 = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Menu 3");
+                var SocialLinksMenu = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Social Links Menu");
+                var LastLinks = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Last Links");
+                var CopyRights = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Copy Rights");
+                var Logos = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Logos");
+
+                <div class="top-footer">
+                    <div class="container">
+                        <div class="row">
+                            @{
+                                draw_MenuLinks(Menu_1);
+                                draw_MenuLinks(Menu_2);
+                                draw_MenuLinks(Menu_3);
+                                draw_SocialLinks(SocialLinksMenu);
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="btm-footer">
+                    <div class="container">
+                        <div class="row">
+                            @{
+                                draw_LastLinks(LastLinks, CopyRights);
+                                draw_Logos(Logos);
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </footer>
+}
+
+@{
+    void draw_MenuLinks(BlockListItem? MenuLinks)
+    {
+        if (MenuLinks != null)
+        {
+            var categoryLinks = (Widget_ListOfLinks)MenuLinks.Content;
+            var links = categoryLinks.Links?.Where(a => a.Content.Value<Boolean>(nameof(LinkItem.Hide)) is false);
+
+            <div class="col-lg-3">
+                <div class="FooterLinks">
+                    <h4 class="">@categoryLinks.Title</h4>
+                    <ul>
+                        @if (links != null)
+                        {
+                            foreach (var item in links)
+                            {
+                                var _Item = (LinkItem)item.Content;
+                                <li>
+                                    <a href="@_Item?.Link?.Url" target="@_Item?.Link?.Target"> @_Item?.Title </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+
+    }
+    void draw_SocialLinks(BlockListItem? SocialLinks)
+    {
+        var categoryLinks = SocialLinks != null ? (Widget_ListOfLinks)SocialLinks.Content : null;
+        var links = categoryLinks?.Links?.Where(a => a.Content.Value<Boolean>(nameof(LinkItem.Hide)) is false);
+        <div class="col-lg-3">
+            <div class="FooterLinks">
+                <h4 class="">@categoryLinks.Title</h4>
+                <ul class="social">
+                    @if (links != null)
+                    {
+                        foreach (var item in links)
+                        {
+                            var _Item = (LinkItem)item.Content;
+                            var IconOrImageUrl = _Item?.IconOrImage?.Url(IPublishedUrlProvider);
+                            var imgAltText = _Item?.IconOrImage?.Value<string>(nameof(Image.AltText));
+
+                            <li>
+                                <a href="@_Item?.Link?.Url" target="@_Item?.Link?.Target">
+                                    <img src="@IconOrImageUrl" alt="@imgAltText">
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+
+            <div class="FooterLinks">
+                <h4 class="">أدوات الاتاحة والوصول</h4>
+                <ul class="Accessibility">
+                    <li>
+                        <a href="#!">
+                            <img src="/images/shared/zoom-in-area.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!">
+                            <img src="/images/shared/zoom-out-area.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!">
+                            <img src="/images/shared/view-off.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    }
+    void draw_LastLinks(BlockListItem? LastLinks, BlockListItem? copyRights)
+    {
+
+        var categoryLinks = LastLinks != null ? (Widget_ListOfLinks)LastLinks.Content : null;
+
+        var links = categoryLinks?.Links?.Where(a => a.Content.Value<Boolean>(nameof(LinkItem.Hide)) is false);
+
+        <div class="col-lg-8">
+            <div class="footer-last">
+                <ul class="dir-links">
+                    @if (links != null)
+                    {
+                        foreach (var item in links)
+                        {
+                            var _Item = (LinkItem)item.Content;
+                            <li>
+                                <a href="@_Item?.Link?.Url" target="@_Item?.Link?.Target"> @_Item?.Title </a>
+                            </li>
+                        }
+                    }
+                </ul>
+                @if (copyRights != null)
+                {
+                    var _copyRights = (Widget_ListOfLinks)copyRights.Content;
+                    <div class="copyRights">
+                        <p class="">
+                            @_copyRights.Title @DateTime.Now.Year
+                        </p>
+                    </div>
+                }
+
+            </div>
+        </div>
+    }
+    void draw_Logos(BlockListItem? Logos)
+    {
+        if (Logos != null)
+        {
+            var categoryLinks = (Widget_ListOfLinks)Logos.Content;
+            var links = categoryLinks.Links?.Where(a => a.Content.Value<Boolean>(nameof(LinkItem.Hide)) is false);
+            <div class="col-lg-4">
+                <div class="logos-box">
+                    @if (links != null)
+                    {
+                        foreach (var item in links)
+                        {
+                            var _Item = (LinkItem)item.Content;
+                            var IconOrImageUrl = _Item?.IconOrImage?.Url(IPublishedUrlProvider);
+                            var imgAltText = _Item?.IconOrImage?.Value<string>(nameof(Image.AltText));
+
+                            <img src="@IconOrImageUrl" alt="@imgAltText">
+                        }
+                    }
+                </div>
+            </div>
+        }
+
+    }
+}
+
+

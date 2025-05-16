@@ -1,0 +1,104 @@
+﻿@using Umbraco.Cms.Core.Services
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@*@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.MasterPage>;*@
+@using Microsoft.Extensions.Options
+@using reCAPTCHA.AspNetCore
+@using reCAPTCHA.AspNetCore.Versions;
+@inject IOptions<RecaptchaSettings> _RecaptchaSettings;
+
+@{
+    Layout = null;
+
+    bool IsArabic = true;
+    var ShowComingSoon = false;
+
+    try
+    {
+        // if (Model != null)
+        // {
+        //     ShowComingSoon = Model.Value<bool>("ShowComingSoon");
+        // }
+
+        if (Model != null && !string.IsNullOrEmpty(Model.GetCultureFromDomains()))
+        {
+            if (Model.GetCultureFromDomains().ToStringNull().ToLower().Contains("en"))
+            {
+                IsArabic = false;
+            }
+            else
+            {
+                IsArabic = true;
+            }
+
+            var redirectLinks = Model.Value<List<Umbraco.Cms.Core.Models.Link>>(nameof(PageProperties.RedirectUrl));
+            if (redirectLinks != null && redirectLinks.Count > 0)
+            {
+                Context.Response.Redirect(Url.Content(redirectLinks[0].ToLinkURL()));
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        SharedHelper.LogException(ex);
+    }
+
+    //var master = Model.Root();
+    string Lang = IsArabic ? "ar" : "en";
+}
+
+<!DOCTYPE html>
+<html lang="@Lang">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    @await Html.PartialAsync("_SEO")
+
+    @* <partial name="_Styles" /> *@
+    @await Html.PartialAsync("_Styles")
+
+    @await RenderSectionAsync("Styles", required: false)
+
+</head>
+
+<body class="@Model?.Value("CssClass")">
+
+    @await Html.PartialAsync("_Header")
+
+    @if (!ShowComingSoon)
+    {
+        @await Html.PartialAsync("_Breadcrumb")
+    }
+
+    @RenderBody()
+
+    @if (!ShowComingSoon)
+    {
+        @await Html.PartialAsync("Partials/PageContent")
+
+        @await Html.PartialAsync("PageBlockGrid")
+
+        @await Html.PartialAsync("PageBlockLayout")
+
+        @* @await Html.PartialAsync("PageBlockRichText") *@
+
+        @*         @await Html.PartialAsync("_SharingIcons")
+ *@         }
+
+    @await Html.PartialAsync("_Footer")
+  
+    @* <partial name="Scripts" /> *@
+    @await Html.PartialAsync("_Scripts")
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
+
+
+
+
+

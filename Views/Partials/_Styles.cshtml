@@ -1,0 +1,46 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@{
+    bool IsArabic = true;
+
+    try
+    {
+        if (Model != null && !string.IsNullOrEmpty(Model.GetCultureFromDomains()))
+        {
+            if (Model.GetCultureFromDomains().ToStringNull().ToLower().Contains("en"))
+            {
+                IsArabic = false;
+            }
+            else
+            {
+                IsArabic = true;
+            }
+
+            var link = (Umbraco.Cms.Core.Models.Link)Model.Value("redirectURL");
+            if (link != null)
+            {
+                Context.Response.Redirect(Url.Content(link.ToLinkURL()));
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+
+    }
+}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="/css/bootstrapV5.min.css" />
+<!--  Font owl CSS -->
+<link rel="stylesheet" href="/css/swiper-bundle.min.css" />
+
+<!-- DGA styles -->
+<link rel="stylesheet" href="/css/globals.css" />
+<link rel="stylesheet" href="/css/styleguide.css" />
+
+<!-- custom style -->
+<link rel="stylesheet" href="/css/@(IsArabic ? "styleRTL" : "styleLTR").css" />
+

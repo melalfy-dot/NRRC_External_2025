@@ -1,0 +1,45 @@
+﻿@using Umbraco.Cms.Core.Routing
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+@{
+    var _Widget = (Widget_ListOfContentCards)Model.Content;
+
+    if (_Widget != null && _Widget.ContentCards != null && _Widget.ContentCards.Count > 0 && _Widget.HideWidget is false)
+    {
+        var items = _Widget.ContentCards.Where(a => !a.Content.Value<Boolean>(nameof(Widget_ContentCard.Hide)));
+        <section class="aboutUs">
+            <div class="container container2">
+                <div class="row">
+                    @if (items != null && items.Count() > 0)
+                    {
+
+                        @foreach (var item in items)
+                        {
+                            var _Item = (Widget_ContentCard)item.Content;
+                            var iconImage_Url = _Item?.IconOrImage?.Url(IPublishedUrlProvider);
+                            var imgAltText = _Item?.IconOrImage?.Value<string>(nameof(Image.AltText));
+
+                            <div class="col-12">
+                                <div class="aboutUs-card">
+                                    <div class="logo">
+                                        <img src="@iconImage_Url" alt="@imgAltText">
+                                    </div>
+                                    <h2 class="font18">
+                                        @Html.Raw(_Item?.Title)
+                                    </h2>
+                                    <div class="p16">
+                                        @Html.Raw(_Item?.Details)
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </section>
+    }
+}
+
+
