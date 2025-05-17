@@ -46,14 +46,20 @@
 
     //var master = Model.Root();
     string Lang = IsArabic ? "ar" : "en";
+    var currentPage = Umbraco.AssignedContentItem;
+    var master = Umbraco.ContentAtRoot().FirstOrDefault(a => a.ContentType.Alias == Dt_HomePage.ModelTypeAlias); // Assuming the first node is the home page
+    bool isHome = currentPage != null && currentPage.Id == master?.Id;
+
 }
 
 <!DOCTYPE html>
-<html lang="@Lang">
+<html lang="@Lang" dir="@(IsArabic?"rtl":"ltr")" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NRRC</title>
+    <link rel="icon" href="/images/favicon.ico">
 
     @await Html.PartialAsync("_SEO")
 
@@ -65,31 +71,49 @@
 </head>
 
 <body class="@Model?.Value("CssClass")">
+    <div class="site-wrapper d-flex flex-column h-100">
+        @await Html.PartialAsync("_Header")
 
-    @await Html.PartialAsync("_Header")
+        <!--Inner Page-->
+        @if (isHome is false && master != null)
+        {
+            <main class="flex-grow-1">
+                <div class="px-0 px-xl-5 py-5">
+                    <div class="container-fluid">
+                        @if (!ShowComingSoon)
+                        {
+                            @await Html.PartialAsync("_Breadcrumb")
+                        }
+                        <div class="py-5">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </main>
 
-    @if (!ShowComingSoon)
-    {
-        @await Html.PartialAsync("_Breadcrumb")
-    }
+        }
+        else
+        {
+            @RenderBody()
+        }
 
-    @RenderBody()
 
-    @if (!ShowComingSoon)
-    {
-        @await Html.PartialAsync("Partials/PageContent")
+        @if (!ShowComingSoon)
+        {
+            @await Html.PartialAsync("Partials/PageContent")
 
-        @await Html.PartialAsync("PageBlockGrid")
+            @await Html.PartialAsync("PageBlockGrid")
 
-        @await Html.PartialAsync("PageBlockLayout")
+            @await Html.PartialAsync("PageBlockLayout")
 
-        @* @await Html.PartialAsync("PageBlockRichText") *@
+            @* @await Html.PartialAsync("PageBlockRichText") *@
 
-        @*         @await Html.PartialAsync("_SharingIcons")
+            @*         @await Html.PartialAsync("_SharingIcons")
  *@         }
 
-    @await Html.PartialAsync("_Footer")
-  
+        @await Html.PartialAsync("_Footer")
+    </div>
+
     @* <partial name="Scripts" /> *@
     @await Html.PartialAsync("_Scripts")
 

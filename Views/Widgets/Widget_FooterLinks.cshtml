@@ -5,44 +5,39 @@
 
 @{
     var _Widget = (Widget_FooterLinks)Model.Content;
-    <footer class="footerDGA">
-        @if (_Widget != null && _Widget.Links != null && _Widget.Links.Count > 0 && _Widget.HideWidget is false)
-        {
-            var AllMenus = _Widget.Links.Where(a => !a.Content.Value<Boolean>(nameof(Widget_ListOfLinks.HideWidget)));
-            if (AllMenus != null && AllMenus.Count() > 0)
+    <footer class="bg-green-dark text-white py-5">
+        <div class="container">
+            @if (_Widget != null && _Widget.Links != null && _Widget.Links.Count > 0 && _Widget.HideWidget is false)
             {
-                var Menu_1 = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Menu 1");
-                var Menu_2 = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Menu 2");
-                var Menu_3 = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Menu 3");
-                var SocialLinksMenu = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Social Links Menu");
-                var LastLinks = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Last Links");
-                var CopyRights = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Copy Rights");
-                var Logos = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Logos");
+                var AllMenus = _Widget.Links.Where(a => !a.Content.Value<Boolean>(nameof(Widget_ListOfLinks.HideWidget)));
+                if (AllMenus != null && AllMenus.Count() > 0)
+                {
+                    var Menu_1 = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Menu 1");
+                    var Menu_2 = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Menu 2");
+                    var Menu_3 = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Menu 3");
+                    var SocialLinksMenu = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Social Links Menu");
+                    var LastLinks = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Last Links");
+                    var CopyRights = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Copy Rights");
+                    var Logos = AllMenus?.FirstOrDefault(a => a.Content.Value<string>(nameof(Widget_ListOfLinks.Category)) == "Logos");
 
-                <div class="top-footer">
-                    <div class="container">
-                        <div class="row">
-                            @{
-                                draw_MenuLinks(Menu_1);
-                                draw_MenuLinks(Menu_2);
-                                draw_MenuLinks(Menu_3);
-                                draw_SocialLinks(SocialLinksMenu);
-                            }
-                        </div>
+                    <div class="row gx-sm-5 mb-5">
+                        @{
+                            draw_MenuLinks(Menu_1);
+                            draw_MenuLinks(Menu_2);
+                            draw_MenuLinks(Menu_3);
+                            draw_SocialLinks(SocialLinksMenu);
+                        }
                     </div>
-                </div>
-                <div class="btm-footer">
-                    <div class="container">
-                        <div class="row">
-                            @{
-                                draw_LastLinks(LastLinks, CopyRights);
-                                draw_Logos(Logos);
-                            }
-                        </div>
+
+                    <div class="row mb-4 gx-sm-5">
+                        @{
+                            draw_LastLinks(LastLinks, CopyRights);
+                            draw_Logos(Logos);
+                        }
                     </div>
-                </div>
+                }
             }
-        }
+        </div>
     </footer>
 }
 
@@ -54,85 +49,11 @@
             var categoryLinks = (Widget_ListOfLinks)MenuLinks.Content;
             var links = categoryLinks.Links?.Where(a => a.Content.Value<Boolean>(nameof(LinkItem.Hide)) is false);
 
-            <div class="col-lg-3">
-                <div class="FooterLinks">
-                    <h4 class="">@categoryLinks.Title</h4>
-                    <ul>
-                        @if (links != null)
-                        {
-                            foreach (var item in links)
-                            {
-                                var _Item = (LinkItem)item.Content;
-                                <li>
-                                    <a href="@_Item?.Link?.Url" target="@_Item?.Link?.Target"> @_Item?.Title </a>
-                                </li>
-                            }
-                        }
-                    </ul>
+            <div class="col-lg-3 col-sm-6 col-12 mb-4">
+                <div class="footer-head font-M border-bottom border-white-light pb-2 mb-2">
+                    @categoryLinks.Title
                 </div>
-            </div>
-        }
-
-    }
-    void draw_SocialLinks(BlockListItem? SocialLinks)
-    {
-        var categoryLinks = SocialLinks != null ? (Widget_ListOfLinks)SocialLinks.Content : null;
-        var links = categoryLinks?.Links?.Where(a => a.Content.Value<Boolean>(nameof(LinkItem.Hide)) is false);
-        <div class="col-lg-3">
-            <div class="FooterLinks">
-                <h4 class="">@categoryLinks.Title</h4>
-                <ul class="social">
-                    @if (links != null)
-                    {
-                        foreach (var item in links)
-                        {
-                            var _Item = (LinkItem)item.Content;
-                            var IconOrImageUrl = _Item?.IconOrImage?.Url(IPublishedUrlProvider);
-                            var imgAltText = _Item?.IconOrImage?.Value<string>(nameof(Image.AltText));
-
-                            <li>
-                                <a href="@_Item?.Link?.Url" target="@_Item?.Link?.Target">
-                                    <img src="@IconOrImageUrl" alt="@imgAltText">
-                                </a>
-                            </li>
-                        }
-                    }
-                </ul>
-            </div>
-
-            <div class="FooterLinks">
-                <h4 class="">أدوات الاتاحة والوصول</h4>
-                <ul class="Accessibility">
-                    <li>
-                        <a href="#!">
-                            <img src="/images/shared/zoom-in-area.svg" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <img src="/images/shared/zoom-out-area.svg" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <img src="/images/shared/view-off.svg" alt="">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    }
-    void draw_LastLinks(BlockListItem? LastLinks, BlockListItem? copyRights)
-    {
-
-        var categoryLinks = LastLinks != null ? (Widget_ListOfLinks)LastLinks.Content : null;
-
-        var links = categoryLinks?.Links?.Where(a => a.Content.Value<Boolean>(nameof(LinkItem.Hide)) is false);
-
-        <div class="col-lg-8">
-            <div class="footer-last">
-                <ul class="dir-links">
+                <ul class="lh-lg px-0">
                     @if (links != null)
                     {
                         foreach (var item in links)
@@ -144,17 +65,92 @@
                         }
                     }
                 </ul>
-                @if (copyRights != null)
-                {
-                    var _copyRights = (Widget_ListOfLinks)copyRights.Content;
-                    <div class="copyRights">
-                        <p class="">
-                            @_copyRights.Title @DateTime.Now.Year
-                        </p>
-                    </div>
-                }
 
             </div>
+        }
+
+    }
+    void draw_SocialLinks(BlockListItem? SocialLinks)
+    {
+        var categoryLinks = SocialLinks != null ? (Widget_ListOfLinks)SocialLinks.Content : null;
+        var links = categoryLinks?.Links?.Where(a => a.Content.Value<Boolean>(nameof(LinkItem.Hide)) is false);
+        <div class="col-lg-3 col-sm-6 col-12 mb-4">
+            <div class="footer-head font-M border-bottom border-white-light pb-2 mb-2">
+                @categoryLinks?.Title
+            </div>
+           
+            <ul class="social-links d-flex gap-3 align-items-center mb-5 px-0 pt-2">
+                @if (links != null)
+                {
+                    foreach (var item in links)
+                    {
+                        var _Item = (LinkItem)item.Content;
+                        var IconOrImageUrl = _Item?.IconOrImage?.Url(IPublishedUrlProvider);
+                        var imgAltText = _Item?.IconOrImage?.Value<string>(nameof(Image.AltText));
+
+                        <li>
+                            <a href="@_Item?.Link?.Url" target="@_Item?.Link?.Target">
+                                <img src="@IconOrImageUrl" alt="@imgAltText">
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+
+            <div class="footer-head font-M border-bottom border-white-light pb-2 mb-2">
+                النشرة البريدية
+            </div>
+            <div class="subscrib-box mt-1 d-flex align-items-center mb-5 gap-2">
+                <input type="text" class="form-control" />
+                <button class="btn bg-white text-green">اشترك</button>
+            </div>
+
+            <div class="footer-head font-M border-bottom border-white-light pb-2 mb-2">
+                أدوات الاتاحة والوصول
+            </div>
+            <ul class="accessability-links px-0 pt-2">
+                <li class="setting-icon dropdown">
+                    <a class="border border-white-light rounded-2 p-2">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.125 3.33333C8.125 2.06768 9.15101 1.04166 10.4167 1.04166C11.6823 1.04166 12.7083 2.06768 12.7083 3.33333C12.7083 4.59898 11.6823 5.625 10.4167 5.625C9.15101 5.625 8.125 4.59898 8.125 3.33333ZM10.4167 2.29166C9.84137 2.29166 9.375 2.75803 9.375 3.33333C9.375 3.90863 9.84137 4.375 10.4167 4.375C10.992 4.375 11.4583 3.90863 11.4583 3.33333C11.4583 2.75803 10.992 2.29166 10.4167 2.29166Z" fill="white" />
+                            <path d="M10.4167 6.04166C10.7619 6.04166 11.0417 6.32149 11.0417 6.66666V8.125H13.6574C14.0026 8.125 14.2824 8.40482 14.2824 8.75C14.2824 9.09518 14.0026 9.375 13.6574 9.375H11.0417V12.0833C11.0417 12.1659 11.0417 12.2328 11.0426 12.2907C11.1005 12.2916 11.1674 12.2917 11.25 12.2917L13.2068 12.2917C13.3247 12.2916 13.4582 12.2916 13.5747 12.3044C13.7135 12.3196 13.8846 12.3575 14.0519 12.4708C14.2192 12.584 14.3179 12.7288 14.3836 12.852C14.4388 12.9555 14.4883 13.0794 14.532 13.1888L14.9541 14.244C14.9751 14.2966 14.9919 14.3385 15.0068 14.3745C15.0458 14.375 15.0909 14.375 15.1475 14.375H16.25C16.5952 14.375 16.875 14.6548 16.875 15C16.875 15.3452 16.5952 15.625 16.25 15.625L15.1265 15.625C15.0086 15.625 14.8752 15.6251 14.7587 15.6123C14.6198 15.5971 14.4488 15.5592 14.2815 15.4459C14.1142 15.3326 14.0154 15.1879 13.9497 15.0646C13.8946 14.9612 13.8451 14.8373 13.8013 14.7278L13.3793 13.6726C13.3582 13.6201 13.3414 13.5781 13.3265 13.5422C13.2876 13.5417 13.2424 13.5417 13.1858 13.5417L11.2213 13.5417C11.0504 13.5417 10.8655 13.5418 10.7095 13.5208C10.5268 13.4963 10.2933 13.4331 10.0968 13.2366C9.90028 13.0401 9.83708 12.8066 9.81251 12.6238C9.79153 12.4678 9.79161 12.283 9.79167 12.112L9.79168 6.66666C9.79168 6.32149 10.0715 6.04166 10.4167 6.04166Z" fill="white" />
+                            <path d="M8.06791 8.94989C8.40838 8.89303 8.63829 8.57094 8.58143 8.23048C8.52457 7.89002 8.20248 7.66011 7.86202 7.71697C5.17562 8.1656 3.125 10.4913 3.125 13.2986C3.125 16.4271 5.67205 18.9584 8.80796 18.9584C10.7087 18.9584 12.3922 18.0284 13.4232 16.6017C13.6254 16.3219 13.5625 15.9312 13.2828 15.729C13.003 15.5268 12.6123 15.5897 12.4101 15.8695C11.6048 16.9838 10.2919 17.7084 8.80796 17.7084C6.357 17.7084 4.375 15.7314 4.375 13.2986C4.375 11.1164 5.96997 9.30025 8.06791 8.94989Z" fill="white" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    }
+    void draw_LastLinks(BlockListItem? LastLinks, BlockListItem? copyRights)
+    {
+
+        var categoryLinks = LastLinks != null ? (Widget_ListOfLinks)LastLinks.Content : null;
+
+        var links = categoryLinks?.Links?.Where(a => a.Content.Value<Boolean>(nameof(LinkItem.Hide)) is false);
+
+        <div class="col-lg-9 col-sm-6 col-12 mb-4">
+            <ul class="d-flex gap-3 mb-4 px-0">
+                @if (links != null)
+                {
+                    foreach (var item in links)
+                    {
+                        var _Item = (LinkItem)item.Content;
+                        <li>
+                            <a class="text-decoration-underline" href="@_Item?.Link?.Url" target="@_Item?.Link?.Target"> @_Item?.Title </a>
+                        </li>
+                    }
+                }
+            </ul>
+            @if (copyRights != null)
+            {
+                var _copyRights = (Widget_ListOfLinks)copyRights.Content;
+                <h6 class="font-M">
+                    @_copyRights.Title @DateTime.Now.Year
+                </h6>
+                <span>تاريخ آخر تعديل: 04/12/2020</span>
+            }
+
         </div>
     }
     void draw_Logos(BlockListItem? Logos)
@@ -163,17 +159,22 @@
         {
             var categoryLinks = (Widget_ListOfLinks)Logos.Content;
             var links = categoryLinks.Links?.Where(a => a.Content.Value<Boolean>(nameof(LinkItem.Hide)) is false);
-            <div class="col-lg-4">
-                <div class="logos-box">
+            <div class="col-lg-3 col-sm-6 col-12 mb-4">
+                <div class="row footer-logos">
+
                     @if (links != null)
                     {
                         foreach (var item in links)
                         {
                             var _Item = (LinkItem)item.Content;
+                            var Url = _Item?.Link.ToLinkURL();
                             var IconOrImageUrl = _Item?.IconOrImage?.Url(IPublishedUrlProvider);
                             var imgAltText = _Item?.IconOrImage?.Value<string>(nameof(Image.AltText));
-
-                            <img src="@IconOrImageUrl" alt="@imgAltText">
+                            <div class="col-sm-6 col-12 mb-4 text-center">
+                                <a href="@Url" target="@_Item.Link?.Target">
+                                    <img src="@IconOrImageUrl" alt="@imgAltText" class="w-100">
+                                </a>
+                            </div>
                         }
                     }
                 </div>

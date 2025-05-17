@@ -64,10 +64,10 @@ namespace NetCore.Models
         //    }
         //}
 
-        public static string Icon_Default { get { return "/css/assets/images/logo_ncsp.png"; } }
+        public static string Icon_Default { get { return "/images/logo_nrrc.png"; } }
 
         //public static string SendEmailFrom { get { return ConfigurationManager.AppSetting["SendEmailFrom"].ToStringNull(); } }
-        public static string StaticLogo { get { return "/css/assets/images/logo_ncsp.png"; } }
+        public static string StaticLogo { get { return "/images/logo_nrrc.png"; } }
         public static string StaticLogo_Dev
         {
             get

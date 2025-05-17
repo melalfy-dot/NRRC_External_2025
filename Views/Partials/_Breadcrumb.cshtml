@@ -40,66 +40,51 @@
 {
     var list = Model?.Ancestors<IPublishedContent>().Reverse();
 
-    <section class="innerBanner">
-        <div class="container container2">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcrumb">
-                        <ul class="items">
-                            @if (list?.Count() > 0)
+    <div class="page-title-section">
+        <div class="breadcrumb-box">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    @if (list?.Count() > 0)
+                    {
+                        foreach (var item in list)
+                        {
+                            var item_PageTitle = item.ToPageTitle();
+
+                            var item_url = item.Url();
+
+                            @if (currentPage?.Id == item.Id)
                             {
-                                @* <li>
-                                    <a href="@(Lang_URL)" class="home">
-                                        <img src="/images/shared/GAFTLogo.svg" alt="">
-                                    </a>
-                                </li> *@
-                                foreach (var item in list)
-                                {
-                                    var item_PageTitle = item.ToPageTitle();
-
-                                    var item_url = item.Url();
-                                    <li>
-                                        @if (currentPage?.Id == item.Id)
-                                        {
-                                            <span>
-                                                @item_PageTitle
-                                            </span>
-                                        }
-                                        else
-                                        {
-                                            <a href="@item_url">
-                                                @item_PageTitle
-                                            </a>
-                                        }
-                                    </li>
-                                }
-                                <li>
-                                    <span>
-                                        @currentPage_title
-                                    </span>
+                                <li class="breadcrumb-item">
+                                    @item_PageTitle
                                 </li>
-                               
                             }
-                        </ul>
-                    </div>
-                    <!-- end breadcrumb -->
-                </div>
-            </div>
-        </div>
-        <div class="container container2">
-            <div class="row">
-                <div class="col-12">
-                    <div class="titleBnr">
-                        <h1 class="">
+                            else
+                            {
+                                <li class="breadcrumb-item">
+                                    <a href="@item_url">
+                                        @item_PageTitle
+                                    </a>
+                                </li>
+                            }
+                          
+                        }
+                        <li class="breadcrumb-item active" aria-current="page">
                             @currentPage_title
-                        </h1>
-                        <p>
-                            @currentPage_Description
-                        </p>
-                    </div>
-                </div>
+                        </li>
+                    }
 
-            </div>
+                </ol>
+            </nav>
+
         </div>
-    </section>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="font-bold"> @currentPage_title</h2>
+            @*  <button class="bg-green text-white p-3 py-2 btn" type="button">
+            بدء الخدمة
+        </button> *@
+        </div>
+    </div>
 }
+
+
+

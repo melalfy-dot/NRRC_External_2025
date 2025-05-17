@@ -8,73 +8,61 @@
 }
 @if (_Widget != null && _Widget.HideWidget is false)
 {
-    <section class="bannerMenu">
-        <div class="swiper homBanner">
-            <div class="swiper-wrapper">
+    <div id="carouselExampleIndicators" class="carousel slide hero-carousel position-relative">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner h-100">
+            @if (_Widget.BannerList != null)
+            {
+                var items = _Widget?.BannerList?
+                .Where(p => !p.Content.Value<Boolean>(nameof(Banner.Hide)))
+                .Where(p =>
+                (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) == DateTime.MinValue && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) == DateTime.MinValue)
+                || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) <= DateTime.Now && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) >= DateTime.Now)
+                || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) <= DateTime.Now && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) == DateTime.MinValue)
+                || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) == DateTime.MinValue && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) >= DateTime.Now));
 
-                @if (_Widget.BannerList != null)
+                if (items != null && items.Count() > 0)
                 {
-                    var items = _Widget?.BannerList?
-                    .Where(p => !p.Content.Value<Boolean>(nameof(Banner.Hide)))
-                    .Where(p =>
-                    (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) == DateTime.MinValue && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) == DateTime.MinValue)
-                    || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) <= DateTime.Now && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) >= DateTime.Now)
-                    || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) <= DateTime.Now && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) == DateTime.MinValue)
-                    || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) == DateTime.MinValue && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) >= DateTime.Now));
-
-                    if (items != null && items.Count() > 0)
+                    int index = 0;
+                    foreach (var item in items)
                     {
-                        foreach (var item in items)
+                        var _Item = (Banner)item.Content;
+                        if (_Item != null)
                         {
-                            var _Item = (Banner)item.Content;
-                            if (_Item != null)
-                            {
-                                var imgUrl = _Item?.LinkImage?.Url(IPublishedUrlProvider);
-                                var imgAltText = _Item?.LinkImage?.Value<string>(nameof(Image.AltText));
-                                <div class="swiper-slide">
-                                    <div class="contentBanner">
-                                        <div class="bg-video-wrap">
-                                            <img src="@imgUrl" alt="@imgAltText" />
-                                        </div>
-                                        <div class="container">
-                                            <div class="BNRtxt">
-                                                <h1 class="">
-                                                    @_Item?.Title
-                                                </h1>
-                                                <p>
-                                                    @_Item?.LinkDetails
-                                                </p>
-                                                @if (string.IsNullOrEmpty(_Item?.Link.ToLinkURL("")) is false)
-                                                {
-                                                    <div class="white-btn">
-                                                        <a href="@_Item?.Link" class="">
-                                                            <span> @_Item?.Link?.Name </span>
-                                                            <img src="/images/shared/arrow-left-black.svg" alt="" />
-                                                        </a>
-                                                    </div>
-                                                }
+                            var imgUrl = _Item?.LinkImage?.Url(IPublishedUrlProvider);
+                            var imgAltText = _Item?.LinkImage?.Value<string>(nameof(Image.AltText));
 
-                                            </div>
+                            <div class="carousel-item @(index==0?"active":"") h-100">
+                                <img src="@imgUrl" class="h-100" alt="@imgAltText">
+                                <div class="carousel-caption px-0 px-xl-5 w-100 start-0 top-0 h-100">
+                                    <div class="container-fluid h-100">
+                                        <div class="col-xl-5 col-lg-6 col-12 px-0 h-100 d-flex flex-column justify-content-center align-items-start">
+                                            <h1 class="font-bold mb-4"> @_Item?.Title</h1>
+                                            <p class="mb-4"> @_Item?.LinkDetails</p>
+
+                                            @if (string.IsNullOrEmpty(_Item?.Link.ToLinkURL("")) is false)
+                                            {
+                                                <a href="@_Item?.Link" class="btn bg-white d-flex align-items-center gap-2 font-medium">
+                                                    <span>@_Item?.Link?.Name</span>
+                                                    <i class="bi bi-arrow-right"></i>
+                                                </a>
+                                            }
                                         </div>
+
                                     </div>
                                 </div>
-                            }
-                            <!-- end slider -->
+                            </div>
                         }
+                        <!-- end slider -->
+                        index++;
                     }
                 }
+            }
 
-            </div>
-            <div class="customPagi bannerPagi">
-                <div class="swiper-pagination"></div>
-            </div>
         </div>
-        <!-- end content of slider -->
-        <div class="chatEvent">
-            <a href="#!" class="bgIcon">
-                <img src="/images/shared/chatIcon.svg" alt="" />
-            </a>
-        </div>
-        <!-- end chat -->
-    </section>
+    </div>
 }
