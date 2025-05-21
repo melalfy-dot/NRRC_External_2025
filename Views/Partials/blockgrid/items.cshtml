@@ -21,12 +21,12 @@
 
                 if (item.Content.ContentType.Alias.ToLower().Contains("Widget_".ToLower()))
                 {
-                    partialViewName = "/Views/Widgets/" + item.Content.ContentType.Alias + ".cshtml";
+                    partialViewName = "/Views/Partials/Widgets/" + item.Content.ContentType.Alias + ".cshtml";
                 }
 
                 if (item.Content.ContentType.Alias.ToLower().Contains("Form_".ToLower()))
                 {
-                    partialViewName = "/Views/Forms/" + item.Content.ContentType.Alias + ".cshtml";
+                    partialViewName = "/Views/Partials/Forms/" + item.Content.ContentType.Alias + ".cshtml";
                 }
 
                 // if (item.Content.ContentType.Alias == "Widget_ListOfItems")

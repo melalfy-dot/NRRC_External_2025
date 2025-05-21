@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Home Page</summary>
 	[PublishedModel("DT_HomePage")]
-	public partial class Dt_HomePage : PublishedContentModel, IFooter, IPageBlockList, IPageProperties, IPageSeo, IPageTitles
+	public partial class Dt_HomePage : PublishedContentModel, IFooter, IPageBlockList, IPageProperties, IPageSeo, IPageTitles, ITopMenu
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -343,5 +343,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pageTitle")]
 		public virtual string PageTitle => global::Umbraco.Cms.Web.Common.PublishedModels.PageTitles.GetPageTitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// TopMenu Page Widgets
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("topMenuPageWidgets")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel TopMenuPageWidgets => global::Umbraco.Cms.Web.Common.PublishedModels.TopMenu.GetTopMenuPageWidgets(this, _publishedValueFallback);
 	}
 }

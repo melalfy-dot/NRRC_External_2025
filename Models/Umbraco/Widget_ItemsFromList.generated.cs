@@ -65,14 +65,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual bool HideWidget => this.Value<bool>(_publishedValueFallback, "hideWidget");
 
 		///<summary>
-		/// Layout Name
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("layoutName")]
-		public virtual string LayoutName => this.Value<string>(_publishedValueFallback, "layoutName");
-
-		///<summary>
 		/// List Path
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
@@ -93,6 +85,22 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
 		[ImplementPropertyType("pageSize")]
 		public virtual int PageSize => this.Value<int>(_publishedValueFallback, "pageSize");
+
+		///<summary>
+		/// Read more link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("readMoreLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link ReadMoreLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "readMoreLink");
+
+		///<summary>
+		/// Template
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("template")]
+		public virtual string Template => this.Value<string>(_publishedValueFallback, "template");
 
 		///<summary>
 		/// Title

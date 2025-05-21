@@ -10,12 +10,15 @@
     bool isHome = currentPage != null && currentPage.Id == master?.Id;
     if (isHome is false && master != null)
     {
-        var FooterBlockGridItem = ((Dt_HomePage)master).FooterPageWidgets?.FirstOrDefault();
-        if (FooterBlockGridItem != null)
-        {
-            var partialViewName = "/Views/Widgets/" + FooterBlockGridItem.Content.ContentType.Alias + ".cshtml";
+        var Footer_BlockGridItem = ((Dt_HomePage)master)
+                                        .FooterPageWidgets?
+                                         .FirstOrDefault(a => a.Content.ContentType.Alias == Widget_FooterLinks.ModelTypeAlias);
 
-            @await Html.PartialAsync(partialViewName, FooterBlockGridItem)
+        if (Footer_BlockGridItem != null)
+        {
+            var partialViewName = "/Views/Partials/Widgets/" + Footer_BlockGridItem.Content.ContentType.Alias + ".cshtml";
+
+            @await Html.PartialAsync(partialViewName, Footer_BlockGridItem)
         }
 
     }
