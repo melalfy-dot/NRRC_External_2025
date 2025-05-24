@@ -1,0 +1,71 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridContentModel>
+@using Custom.ViewModel
+@using NRRC_External_2025.Models.Custom
+@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+
+@if (Model is not null)
+{
+    var _Widget = (Widget_ItemsFromList)Model?.BlockGridItem?.Content;
+    if (_Widget != null && _Widget.HideWidget is false)
+    {
+        var items = Model?.PublishedContentItem?
+                         .ChildrenOfType(DT_NumbersItem.ModelTypeAlias)?
+                         .Where(x => x.Value<bool>(nameof(DT_NumbersItem.Hide)) is false)
+                          .OrderBy(p => p.Value<DateTime>(nameof(DT_NumbersItem.ItemOrder)))
+                          .ToList();
+
+        <div class="bg-gray py-5 statistics">
+            <div class="px-0 px-xl-5">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+                        @if (Model.isHomePage)
+                        {
+                            <h3 class="font-bold">@_Widget?.Title</h3>
+                            var readMoreLink = _Widget?.ReadMoreLink.ToLinkURL("");
+                            <a class="btn bg-transparent d-flex align-items-center gap-2 font-medium border" href="@_Widget?.ReadMoreLink.ToLinkURL("")">
+                                <span>@_Widget?.ReadMoreLink?.Name</span>
+                            </a>
+                        }
+                    </div>
+                    <p class="mb-4">@_Widget?.Details</p>
+                </div>
+            </div>
+            <div class="px-0 px-xl-5 py-4">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
+
+                        @if (items != null && items.Count() > 0)
+                        {
+                            if (_Widget?.MaxRecords > 0)
+                            {
+                                items = items?.Take(_Widget.MaxRecords).ToList();
+                            }
+                            foreach (DT_NumbersItem item in items)
+                            {
+                               @*  var ImageUrl = item?.?.Url(IPublishedUrlProvider);
+                                var imgAltText = item?.Image?.Value<string>(nameof(Image.AltText)); *@
+
+                                <div class="statistics-item bg-white rounded-4 p-3 d-flex flex-column align-items-center">
+                                    <div class="icon bg-green-50 rounded-circle d-flex align-items-center justify-content-center mb-4">
+                                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2405 2.24036C14.3284 1.19755 16.0054 1.19755 17.0933 2.24036C17.8104 2.92777 18.6988 3.88412 19.4131 4.9902C20.1212 6.08644 20.7086 7.40709 20.7086 8.80484C20.7086 11.4967 18.612 14.2916 15.1669 14.2916C11.7218 14.2916 9.62522 11.4967 9.62522 8.80484C9.62522 7.40709 10.2126 6.08644 10.9206 4.9902C11.635 3.88412 12.5234 2.92777 13.2405 2.24036ZM15.8823 3.50369C15.4713 3.10977 14.8625 3.10977 14.4515 3.50369C13.7888 4.13899 13.0042 4.98968 12.3907 5.93965C11.7708 6.89945 11.3752 7.88385 11.3752 8.80484C11.3752 10.6598 12.813 12.5416 15.1669 12.5416C17.5208 12.5416 18.9586 10.6598 18.9586 8.80484C18.9586 7.88385 18.563 6.89945 17.9431 5.93965C17.3295 4.98968 16.545 4.13899 15.8823 3.50369Z" fill="#067647"></path>
+                                            <path d="M3.79189 16.3333C3.79189 15.85 4.18364 15.4583 4.66689 15.4583L7.46085 15.4583C7.93513 15.4583 8.40397 15.565 8.83052 15.7714L11.2128 16.9241C11.4002 17.0147 11.6082 17.0626 11.8203 17.0626H13.0367C14.0136 17.0626 14.8975 17.5238 15.4499 18.2475L20.2645 16.7682L20.2663 16.7677C21.5852 16.3576 22.9975 16.8509 23.8059 17.9703C24.531 18.9744 24.2508 20.4228 23.162 21.051L14.3939 26.1101C13.6297 26.551 12.7238 26.6601 11.8787 26.4093L4.41763 24.1953C3.95435 24.0579 3.69023 23.5709 3.8277 23.1076C3.96517 22.6443 4.45218 22.3802 4.91547 22.5176L12.3765 24.7316C12.7581 24.8448 13.1681 24.7969 13.5193 24.5943L22.2875 19.5352C22.4524 19.4401 22.5225 19.1823 22.3871 18.9948C22.0058 18.4668 21.3654 18.2582 20.7851 18.439L20.7818 18.44L16.0401 19.8969C16.0413 19.9307 16.0419 19.9647 16.0419 19.9989C16.0419 20.4552 15.7313 20.8284 15.3228 20.9414L12.3584 21.761C11.6228 21.9644 10.835 21.894 10.1483 21.5617L7.60158 20.3295C7.16658 20.1191 6.98456 19.5958 7.19503 19.1608C7.40551 18.7258 7.92877 18.5438 8.36378 18.7542L10.9105 19.9864C11.2131 20.1329 11.5641 20.1649 11.8921 20.0743L14.1487 19.4503C13.9433 19.0787 13.5343 18.8126 13.0367 18.8126H11.8203C11.346 18.8126 10.8772 18.7058 10.4506 18.4994L8.06833 17.3467C7.88099 17.2561 7.6729 17.2083 7.46085 17.2083H4.66689C4.18364 17.2083 3.79189 16.8165 3.79189 16.3333Z" fill="#067647"></path>
+                                        </svg>
+                                        @* <img src="@ImageUrl" alt="@imgAltText" class="w-100" /> *@
+                                    </div>
+                                    <h1 class="text-green-dark font-regular mb-2">@item.OperationCharacter<span class="counter-count">@item.Number</span></h1>
+                                    <p>@item.ToPageTitle()</p>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

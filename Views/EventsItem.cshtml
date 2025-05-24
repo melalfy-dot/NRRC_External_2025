@@ -1,0 +1,49 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Dt_EventsItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    Layout = "Layout_Master.cshtml";
+}
+
+@if (UmbracoContext != null && UmbracoContext.IsFrontEndUmbracoRequest())
+{
+    if (Model != null)
+    {
+        var imgAltText = Model?.Value<string>(nameof(Image.AltText));
+
+        <h1 class="newsTitle">
+            @Html.Raw(Model.ToPageTitle())
+        </h1>
+        <p class="date">
+            <img src="/css/assets/images/shared/calendar-dates.svg" alt="" />
+            <span>@Model?.DateStart.ToDateTime44()</span>
+        </p>
+
+        <img class="newsImage" src="@Model?.Image.ToIconURL()" alt="@imgAltText" />
+        <br />
+        <br />
+        <br />
+        <div class="col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <div class="newsText">
+                @Html.Raw(Model.Details)
+            </div>
+
+        </div>
+    }
+}
+else
+{
+    if (Model != null)
+    {
+        <ul class="admin_ul">
+            <li>
+                @Model.ToPageTitle()
+            </li>
+        </ul>
+    }
+
+    <div class="alert alert-warning admin_alert" role="alert">
+        Click here to fill info or data source
+    </div>
+}

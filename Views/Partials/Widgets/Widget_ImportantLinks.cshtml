@@ -1,0 +1,126 @@
+﻿@using Umbraco.Cms.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+
+@{
+    var widget = (Widget_ImportantLinks)Model.Content;
+    var allItems = widget.Links; // هذا يعيد IEnumerable<BlockListItem>
+
+    var importantLinks = allItems?.Where(x => x.Content.Value<string>("category") == "ImportantLinks");
+    var relatedLinks = allItems?.Where(x => x.Content.Value<string>("category") == "RelatedLinks");
+}
+
+<div class="bg-light py-5 importantLinks">
+    <div class="px-0 px-xl-5">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+                <h3 class="font-bold">روابط هامة</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-2">
+        <div class="px-0 px-xl-5">
+            <div class="container-fluid">
+                <ul class="nav nav-underline" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="tab1" data-bs-toggle="tab" data-bs-target="#tab1-pane" type="button" role="tab">روابط هامة</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab2" data-bs-toggle="tab" data-bs-target="#tab2-pane" type="button" role="tab">جهات ذات علاقة</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content" id="myTabContent">
+
+            <!-- Important Links -->
+            <div class="tab-pane fade show active" id="tab1-pane" role="tabpanel" aria-labelledby="tab1">
+                <div class="py-4">
+                    <div class="owl-carousel owl-theme importantLinks-carousel">
+                        @foreach (var item in importantLinks)
+                        {
+                            var content = item.Content;
+                            var icon = content.Value<MediaWithCrops>("icon");
+                            var title = content.Value<string>("title");
+                            var url = content.Value<Link>("link");
+                            var hide = content.Value<bool>("hide");
+
+                            if (hide) { continue; }
+
+                            <div class="item">
+                                <div class="importantLinks-item border bg-white rounded-4 p-3 d-flex flex-column align-items-start">
+                                    <div class="icon bg-green-50 rounded-circle d-flex align-items-center justify-content-center mb-4">
+                                        <img src="@icon?.Url()" alt="" />
+                                    </div>
+                                    <h5 class="mb-4 font-bold">@title</h5>
+                                    <a href="@url?.Url" class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="px-0 px-xl-5">
+                    <div class="container-fluid">
+                        <div class="d-flex justify-content-between align-items-center gap-3 owlcarousel-control">
+                            <div class="side-nav d-flex align-items-center gap-3">
+                                <a class="next rounded-circle bg-white d-flex align-items-center justify-content-center"><i class="bi bi-chevron-left fs-5"></i></a>
+                                <a class="prev rounded-circle bg-white d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right fs-5"></i></a>
+                            </div>
+                            <div class="owl-dots d-flex gap-2">
+                                <button role="button" class="owl-dot"><span></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Links -->
+            <div class="tab-pane fade" id="tab2-pane" role="tabpanel" aria-labelledby="tab2">
+                <div class="py-4">
+                    <div class="owl-carousel owl-theme importantLinks-carousel">
+                        @foreach (var item in relatedLinks)
+                        {
+                            var content = item.Content;
+                            var icon = content.Value<MediaWithCrops>("icon");
+                            var title = content.Value<string>("title");
+                            var url = content.Value<Link>("link");
+                            var hide = content.Value<bool>("hide");
+
+                            if (hide) { continue; }
+
+                            <div class="item">
+                                <div class="importantLinks-item border bg-white rounded-4 p-3 d-flex flex-column align-items-start">
+                                    <div class="icon bg-green-50 rounded-circle d-flex align-items-center justify-content-center mb-4">
+                                        <img src="@icon?.Url()" alt="" />
+                                    </div>
+                                    <h5 class="mb-4 font-bold">@title</h5>
+                                    <a href="@url?.Url" class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="px-0 px-xl-5">
+                    <div class="container-fluid">
+                        <div class="d-flex justify-content-between align-items-center gap-3 owlcarousel-control">
+                            <div class="side-nav d-flex align-items-center gap-3">
+                                <a class="next rounded-circle bg-white d-flex align-items-center justify-content-center"><i class="bi bi-chevron-left fs-5"></i></a>
+                                <a class="prev rounded-circle bg-white d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right fs-5"></i></a>
+                            </div>
+                            <div class="owl-dots d-flex gap-2">
+                                <button role="button" class="owl-dot"><span></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
