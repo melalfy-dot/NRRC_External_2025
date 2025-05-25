@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Page Content</summary>
 	[PublishedModel("DT_PageContent")]
-	public partial class Dt_PageContent : PublishedContentModel, IPageBlockList, IPageChildrens, IPageContent, IPageDescription, IPageProperties, IPageSeo
+	public partial class Dt_PageContent : PublishedContentModel, IPageBlockList, IPageChildrens, IPageContent, IPageDescription, IPageProperties, IPageSeo, IPageTitles
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -219,7 +219,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::System.Collections.Generic.IEnumerable<string> MetaKeywords => global::Umbraco.Cms.Web.Common.PublishedModels.PageSeo.GetMetaKeywords(this, _publishedValueFallback);
 
 		///<summary>
-		/// Meta Tag Block: Can input any text what you want to render in the HTML HEAD. For example:  {meta name="keywords" content="{Title}"}{meta http-equiv="charset" content="{Charset}"}
+		/// Meta Tag Block: Can input any text what you want to render in the HTML HEAD. For example:   {meta name="keywords" content="{Title}"}{meta http-equiv="charset" content="{Charset}"}
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -351,5 +351,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
 		[ImplementPropertyType("umbracoNaviHide77")]
 		public virtual bool UmbracoNaviHide77 => global::Umbraco.Cms.Web.Common.PublishedModels.PageSeo.GetUmbracoNaviHide77(this, _publishedValueFallback);
+
+		///<summary>
+		/// Page Title: to override the page name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("pageTitle")]
+		public virtual string PageTitle => global::Umbraco.Cms.Web.Common.PublishedModels.PageTitles.GetPageTitle(this, _publishedValueFallback);
 	}
 }

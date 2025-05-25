@@ -50,6 +50,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Category
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("category")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Category => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "category");
+
+		///<summary>
 		/// Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]

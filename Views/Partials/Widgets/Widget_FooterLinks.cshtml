@@ -4,6 +4,10 @@
 @inject IPublishedUrlProvider IPublishedUrlProvider
 
 @{
+    // var currentPage = Umbraco.AssignedContentItem;
+    // var lastUpdated = currentPage?.UpdateDate; // Get the last updated date
+    var rootPage = Umbraco.Content(Umbraco.AssignedContentItem.Root().Id);
+    var lastUpdated = rootPage?.UpdateDate;
     var _Widget = (Widget_FooterLinks)Model.Content;
     <footer class="bg-green-dark text-white py-5">
         <div class="container">
@@ -78,7 +82,7 @@
             <div class="footer-head font-M border-bottom border-white-light pb-2 mb-2">
                 @categoryLinks?.Title
             </div>
-           
+
             <ul class="social-links d-flex gap-3 align-items-center mb-5 px-0 pt-2">
                 @if (links != null)
                 {
@@ -148,7 +152,11 @@
                 <h6 class="font-M">
                     @_copyRights.Title @DateTime.Now.Year
                 </h6>
-                <span>تاريخ آخر تعديل: 04/12/2020</span>
+                @if (lastUpdated is not null && lastUpdated.HasValue)
+                {
+                    var UpdatedaDate_trans= Umbraco.GetDictionaryValue("Latest Updatated Date");
+                    <span>@UpdatedaDate_trans  @lastUpdated.Value.ToString("dd/MM/yyyy")</span>
+                }
             }
 
         </div>
