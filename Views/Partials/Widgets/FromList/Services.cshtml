@@ -10,6 +10,8 @@
 
 @if (Model is not null)
 {
+    var isArabic = System.Globalization.CultureInfo.CurrentCulture.Name.Equals("ar", StringComparison.OrdinalIgnoreCase);
+
     var _Widget = (Widget_ItemsFromList)Model?.BlockGridItem?.Content;
     if (_Widget != null && _Widget.HideWidget is false)
     {
@@ -44,7 +46,7 @@
             </div>
             <div class="py-4">
                 <div class="owl-carousel owl-theme services-carousel">
-                    
+
 
 
                     @if (items != null && items.Count() > 0)
@@ -70,10 +72,19 @@
                                     <h5 class=" font-bold mb-2">@item.ToPageTitle()</h5>
                                     <p class="flex-grow-1">@item?.Description</p>
                                     <ul class="d-flex gap-2 flex-wrap mb-4 px-0 mt-1 small font-medium">
-                                        <li class="border border-gray-100 rounded-2 p-2 py-1 bg-gray-100">المستفيدين</li>
-                                        <li class="border border-blue-500 rounded-2 p-2 py-1 bg-blue-50 text-primary">خدمات</li>
-                                        <li class="border border-green-600 rounded-2 p-2 py-1 bg-green-50 text-success">نووي</li>
-                                    </ul>
+                                        @if (item?.Category is not null)
+                                        {
+                                            foreach (var blocListItem in item.Category)
+                                            {
+                                                var categoryItem = (ServiceCategory)blocListItem.Content;
+                                                var title = isArabic ?
+                                                            categoryItem.Category?.Value<string>(nameof(LookupItem.TitleAr)) :
+                                                            categoryItem.Category?.Value<string>(nameof(LookupItem.TitleEn));
+                                                var cssClass = categoryItem.Category?.Value<string>(nameof(LookupItem.CssClass));
+                                                <li class="border rounded-2 p-2 py-1 @cssClass">@title</li>
+                                            }
+                                        }
+                                       </ul>
                                     <a class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black" href="@item?.Url(IPublishedUrlProvider)">
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
@@ -82,8 +93,6 @@
                         }
                     }
 
-                   
-                   
                 </div>
             </div>
             <div class="px-0 px-xl-5">

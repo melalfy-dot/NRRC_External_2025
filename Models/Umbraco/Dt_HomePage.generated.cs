@@ -203,7 +203,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::System.Collections.Generic.IEnumerable<string> MetaKeywords => global::Umbraco.Cms.Web.Common.PublishedModels.PageSeo.GetMetaKeywords(this, _publishedValueFallback);
 
 		///<summary>
-		/// Meta Tag Block: Can input any text what you want to render in the HTML HEAD. For example:  {meta name="keywords" content="{Title}"}{meta http-equiv="charset" content="{Charset}"}
+		/// Meta Tag Block: Can input any text what you want to render in the HTML HEAD. For example:   {meta name="keywords" content="{Title}"}{meta http-equiv="charset" content="{Charset}"}
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
