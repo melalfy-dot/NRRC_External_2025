@@ -1,0 +1,324 @@
+.top-header.bg-green a {
+    color: #fff;
+}
+
+.bg-green-light {
+    background-color: #f7fdf9;
+}
+
+.btn.bg-black:hover {
+    background-color: #1f2a37 !important;
+}
+
+.check-link:after {
+    display: inline-block;
+    font-family: "bootstrap-icons" !important;
+    content: "\f282";
+    margin: 0 3px;
+}
+
+#digitalStampBox .icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+}
+
+footer a:hover {
+    color: #fff !important;
+    opacity: 0.8;
+    text-decoration: underline !important;
+}
+
+footer .social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.service-item {
+    min-height: 340px;
+}
+
+.ms-srch-sbLarge:hover,
+.header-search-box .border:hover,
+.inner-search-box:hover {
+    border-color: #161616 !important;
+}
+
+.inner-search-box {
+    position: relative;
+}
+
+.inner-search-box:after {
+    position: absolute;
+    width: 0;
+    left: 50%;
+    height: 2px;
+    background: #161616;
+    content: "";
+    transform: translate(-50%);
+    transition: width 0.5s ease-in-out;
+    bottom: 0;
+}
+
+.inner-search-box:has(input:focus):after {
+    width: 100%;
+}
+
+input:focus {
+    outline-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.breadcrumb-item:not(.active):hover {
+    text-decoration: underline !important;
+}
+
+.nav-underline .nav-link:hover,
+.nav-underline .nav-link:focus {
+    border-bottom-color: currentcolor;
+}
+
+.nav-underline .nav-link.active,
+.nav-underline .show > .nav-link {
+    border-bottom-color: #1b8354;
+}
+
+.nav-underline .nav-link {
+    color: #161616;
+    border-radius: 4px;
+    padding: 1rem 0.75rem;
+    position: relative;
+    border: none;
+}
+
+.nav-underline .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 4px;
+    background: transparent;
+    border-radius: 9999px;
+    left: 5%;
+    display: none;
+    transition: all ease-in-out 0.25s;
+}
+
+.nav-underline .nav-link.active::before {
+    display: inline-block;
+    background-color: #1b8354;
+}
+
+.nav-underline .nav-link:not(.active):hover {
+    color: #161616;
+    background-image: none;
+    background-color: #f3f4f6;
+    display: inline-block;
+}
+
+.nav-underline .nav-link:not(.active):hover::before {
+    background: #161616;
+    background-image: none;
+    display: inline-block;
+}
+
+.btn.bg-transparent.border:hover,
+.btn.bg-white.border:hover {
+    background-color: #f3f4f6 !important;
+}
+
+.publications-item h5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limits to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 60px;
+    line-height: 1.5;
+}
+
+.events-carousel p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limits to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 50px;
+    line-height: 1.5;
+}
+
+.importantLinks-carousel .owl-item h5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* Limits to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.authority-count h1 {
+    line-height: 1.5;
+}
+
+.latest-news .news-item {
+    height: 100%;
+}
+
+.sitemap-list i.bi {
+    font-size: 0.35rem;
+}
+
+.who-we-are-img {
+    margin: 5px;
+    width: 63vw;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.news-carousel .calendar-icon {
+    width: 22px !important;
+    height: 22px;
+}
+
+.owl-news .owl-stage {
+    display: flex;
+}
+
+.owl-news .item {
+    height: 100%;
+}
+
+.news-carousel-nav .side-nav a,
+.news-carousel-nav .side-nav a,
+.events .side-nav a {
+    background-color: #e5e7eb;
+}
+
+.owlcarousel-control .side-nav a.disabled:hover,
+.owlcarousel-control .side-nav a.disabled {
+    background-color: #e5e7eb !important;
+    color: #161616;
+    opacity: .35;
+}
+
+.owl-dots.disabled {
+    display: none !important;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: 16px;
+    height: 16px;
+    min-height: 16px;
+    border-radius: 50%;
+    background-color: #E5E7EB;
+    border: none;
+    margin: 0;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #1B8354;
+}
+
+.owl-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.owl-theme .owl-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #1B8354;
+    color: #fff;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.owl-carousel .owl-nav button:hover {
+    background-color: #1B8354 !important;
+    color: #fff;
+}
+
+.owl-carousel .owl-nav button.disabled,
+.owl-carousel .owl-nav button.disabled:hover {
+    background-color: #e5e7eb !important;
+    color: #161616;
+    opacity: .35;
+}
+
+.owl-carousel .owl-nav.disabled {
+    display: flex;
+}
+
+.owl-carousel .owl-item img.calendar-icon {
+    width: 22px;
+    height: 22px;
+}
+
+@media (max-width: 991.98px) {
+    .nav-tabs_2::-webkit-scrollbar {
+        width: 1px;
+    }
+
+    .nav-tabs_2::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .nav-tabs_2::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .nav-tabs_2 {
+        scrollbar-width: none;
+    }
+
+    .nav-tabs_2 {
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden !important;
+        display: flex;
+        flex-wrap: initial !important;
+        white-space: nowrap;
+    }
+
+    .who-we-are-img {
+        width: 75vw;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .who-we-are-img {
+        width: 80vw !important;
+    }
+
+    .publications-item {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .who-we-are-img {
+        width: 95vw !important;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .owl-news .owl-nav.disabled,
+    .owl-publications .owl-nav.disabled {
+        display: none;
+    }
+}
