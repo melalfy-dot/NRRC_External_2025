@@ -7,77 +7,66 @@
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @inject IPublishedUrlProvider IPublishedUrlProvider
 
-
 @if (Model is not null)
 {
+    var isArabic = System.Globalization.CultureInfo.CurrentCulture.Name.Equals("ar", StringComparison.OrdinalIgnoreCase);
     var _Widget = (Widget_ItemsFromList)Model?.BlockGridItem?.Content;
     if (_Widget != null && _Widget.HideWidget is false)
     {
         var items = Model?.PublishedContentItem?
-                         .ChildrenOfType(Dt_NewsItem.ModelTypeAlias)?
-                         .Where(x => x.Value<bool>(nameof(Dt_NewsItem.Hide)) is false)
-                          .OrderByDescending(p => p.Value<DateTime>(nameof(Dt_NewsItem.Date)))
-                          .ToList();
+            .ChildrenOfType(Dt_NewsItem.ModelTypeAlias)?
+            .Where(x => x.Value<bool>(nameof(Dt_NewsItem.Hide)) is false)
+            .OrderByDescending(p => p.Value<DateTime>(nameof(Dt_NewsItem.Date)))
+            .ToList();
 
-
-        <div class="news py-5">
+        <div class="news py-5 latest-news-block">
             <div class="px-0 px-xl-5">
                 <div class="container-fluid">
                     <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
-                        @if (Model.isHomePage)
-                        {
-                             <h3 class="font-bold">@_Widget?.Title</h3>
-                            var readMoreLink = _Widget?.ReadMoreLink.ToLinkURL("");
-                            <a class="btn bg-transparent d-flex align-items-center gap-2 font-medium border" href="@_Widget?.ReadMoreLink.ToLinkURL("")">
-                                <span>@_Widget?.ReadMoreLink?.Name</span>
-                            </a>
-                        }
+                        <h3 class="font-bold">@(_Widget.Title ?? "أحدث الأخبار")</h3>
+                        <a class="btn bg-transparent d-flex align-items-center gap-2 font-bold border" href="@_Widget?.ReadMoreLink?.ToLinkURL()">
+                            <span>@(_Widget.ReadMoreLink?.Name ?? "عرض الكل")</span>
+                        </a>
                     </div>
-                    <div class="py-4">
+                    <div class="py-4 latest-news">
                         <div class="row gx-sm-4 gy-4">
-
-                            @if (items != null && items.Count() > 0)
-                            {
-                                if (_Widget?.MaxRecords > 0)
+                            <div class="owl-carousel owl-theme owl-news">
+                                @if (items != null && items.Any())
                                 {
-                                    items = items?.Take(_Widget.MaxRecords).ToList();
-                                }
-                                foreach (Dt_NewsItem item in items)
-                                {
-                                    var ImageUrl = item?.Image?.Url(IPublishedUrlProvider);
-                                    var imgAltText = item?.Image?.Value<string>(nameof(Image.AltText));
-
-                                    <div class="col-sm-4 col-12">
-                                        <div class="news-item border bg-white rounded-4 p-3 d-flex flex-column align-items-start">
-                                            <div class="img rounded-4 mb-3 w-100">
-                                                <img src="@ImageUrl" alt="@imgAltText" class="w-100" />
+                                    if (_Widget?.MaxRecords > 0)
+                                    {
+                                        items = items.Take(_Widget.MaxRecords).ToList();
+                                    }
+                                    foreach (Dt_NewsItem item in items)
+                                    {
+                                        var imageUrl = item?.Image?.Url(IPublishedUrlProvider) ?? "/assets/images/news-img1.png";
+                                        var imgAltText = item?.Image?.Value<string>(nameof(Image.AltText));
+                                        var date = item?.Date.ToString("dd/MM/yyyy") ?? "";
+                                        <div class="item">
+                                            <div class="news-item border bg-white rounded-4 p-3 d-flex flex-column align-items-start">
+                                                <div class="img rounded-4 mb-3 w-100">
+                                                    <img src="@imageUrl" alt="@imgAltText" class="w-100" />
+                                                </div>
+                                                <div class="flex-grow-1 mb-3">
+                                                    <div class="d-flex align-items-center gap-2 mb-4">
+                                                        <img src="/images/calendar-dark-icon.svg" alt="calendar" class="calendar-icon">
+                                                        <span class="font-medium">@date</span>
+                                                    </div>
+                                                    <h5 class="font-bold">@item.ToPageTitle()</h5>
+                                                    <p>@item.Description</p>
+                                                </div>
+                                                <a class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black" href="@item.Url(IPublishedUrlProvider)">
+                                                    <i class="bi bi-arrow-right"></i>
+                                                </a>
                                             </div>
-                                            <div class="flex-grow-1 mb-3">
-                                                <h5 class=" font-bold">@item.ToPageTitle()</h5>
-                                                <p>
-                                                    @item?.Description
-                                                </p>
-                                            </div>
-                                            <a class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black" href="@item?.Url(IPublishedUrlProvider)">
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
-                                            @* <button class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black">
-                                                <i class="bi bi-arrow-right"></i>
-                                            </button> *@
                                         </div>
-                                    </div>
+                                    }
                                 }
-
-                            }
-
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     }
-
-
 }
-
-

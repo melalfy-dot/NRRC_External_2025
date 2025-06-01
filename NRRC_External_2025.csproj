@@ -25,6 +25,7 @@
     <Folder Include="Controllers\" />
     <Folder Include="Resources\" />
     <Folder Include="Views\Forms\" />
+    <Folder Include="Views\Partials\Forms\" />
   </ItemGroup>
 
   <PropertyGroup>

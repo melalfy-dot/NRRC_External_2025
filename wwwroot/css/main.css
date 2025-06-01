@@ -532,11 +532,15 @@ html[dir="rtl"] .bi-chevron-left {
     height: 100%;
     z-index: 1;
     background-color: rgb(9 42 30 / 81%);
-}
+} 
+.hero-carousel:hover::after{
+   background-color:transparent;
+   display: none;
+} 
 .hero-carousel .carousel-indicators {
     left: 0;
     right: 0;
-    margin: 1rem; z-index:3
+    margin: 1rem; z-index:3;
 }
 .hero-carousel .carousel-indicators [data-bs-target] { 
     width: 12px;

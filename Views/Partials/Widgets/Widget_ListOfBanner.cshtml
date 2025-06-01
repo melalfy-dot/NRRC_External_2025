@@ -1,4 +1,4 @@
-﻿@using Umbraco.Cms.Core.Routing
+﻿@* @using Umbraco.Cms.Core.Routing
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
 @inject IPublishedValueFallback PublishedValueFallback
 @inject IPublishedUrlProvider IPublishedUrlProvider
@@ -64,6 +64,103 @@
                 }
             }
 
+        </div>
+    </div>
+}
+ *@
+
+
+
+
+
+@using Umbraco.Cms.Core.Routing
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider IPublishedUrlProvider
+
+@{
+    var _Widget = (Widget_ListOfBanner)Model.Content;
+}
+
+@if (_Widget != null && _Widget.HideWidget is false)
+{
+    <div id="carouselExampleIndicators" class="carousel slide hero-carousel position-relative" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            @{
+                var indicatorsIndex = 0;
+                var activeClass = "active";
+                foreach (var indicator in _Widget.BannerList)
+                {
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@indicatorsIndex" class="@activeClass" aria-current="true" aria-label="Slide @(indicatorsIndex + 1)"></button>
+                    activeClass = "";
+                    indicatorsIndex++;
+                }
+            }
+        </div>
+
+        <div class="carousel-inner h-100">
+            @if (_Widget.BannerList != null)
+            {
+                @* var items = _Widget?.BannerList?
+                .Where(p => !p.Content.Value<bool>(nameof(Banner.Hide)))
+                .Where(p =>
+                (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) == DateTime.MinValue && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) == DateTime.MinValue)
+                || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) <= DateTime.Now && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) >= DateTime.Now)
+                || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) <= DateTime.Now && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) == DateTime.MinValue)
+                || (p.Content.Value<DateTime>(nameof(Banner.PublishFrom)) == DateTime.MinValue && p.Content.Value<DateTime>(nameof(Banner.PublishTo)) >= DateTime.Now));
+ *@
+
+                var items = _Widget?.BannerList;
+
+                if (items != null && items.Any())
+                {
+                    int index = 0;
+                    foreach (var item in items)
+                    {
+                        var _Item = (Banner)item.Content;
+                        if (_Item != null)
+                        {
+                            var imgUrl = _Item?.LinkImage?.Url(IPublishedUrlProvider);
+                            var imgAltText = _Item?.LinkImage?.Value<string>(nameof(Image.AltText));
+                            var videoUrl = _Item?.Video?.Url(IPublishedUrlProvider); // Assuming Video is an Umbraco media picker
+
+                            <div class="carousel-item @(index == 0 ? "active" : "") h-100">
+                                @if (!string.IsNullOrEmpty(videoUrl))
+                                {
+                                    <!-- Render video if available -->
+                                    <video class="object-fit-cover h-100 w-100" autoplay controls muted playsinline>
+                                        <source src="@videoUrl" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                }
+                                else if (!string.IsNullOrEmpty(imgUrl))
+                                {
+                                    <!-- Render image fallback -->
+                                    <img src="@imgUrl" class="h-100 w-100 object-fit-cover" alt="@imgAltText">
+                                }
+
+                                <div class="carousel-caption px-0 px-xl-5 w-100 start-0 top-0 h-100">
+                                    <div class="container-fluid h-100">
+                                        <div class="col-xl-5 col-lg-6 col-12 px-0 h-100 d-flex flex-column justify-content-center align-items-start">
+                                            <h1 class="font-bold mb-4">@_Item?.Title</h1>
+                                            <p class="mb-4">@_Item?.LinkDetails</p>
+
+                                            @if (!string.IsNullOrEmpty(_Item?.Link?.ToLinkURL("")))
+                                            {
+                                                <a href="@_Item?.Link.ToLinkURL("")" class="btn bg-white d-flex align-items-center gap-2 font-medium">
+                                                    <span>@_Item?.Link?.Name</span>
+                                                    <i class="bi bi-arrow-right"></i>
+                                                </a>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        index++;
+                    }
+                }
+            }
         </div>
     </div>
 }

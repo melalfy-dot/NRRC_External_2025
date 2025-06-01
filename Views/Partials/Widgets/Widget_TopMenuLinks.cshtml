@@ -5,7 +5,91 @@
 
 @{
     var _Widget = (Widget_TopMenuLinks)Model.Content;
-    <div class="bg-gray py-3 d-none d-xxl-flex">
+
+
+
+    <div class="bg-gray py-2 top-toggle">
+        <div class="container-fluid">
+            <div class="px-xl-5 px-0">
+                <div class="d-flex gap-2 flex-wrap">
+                    @{
+                        var accordionTitle = @_Widget.AccordionTitle;
+                        var verifyLinkText = @_Widget.VerifyLinkText;
+                        var accordionTitleImageUrl = _Widget?.AccordionTitleImage?.Url(IPublishedUrlProvider);
+
+                        var rightItemTitle = _Widget?.RightItemTitle;
+                        var rightItemDescription = _Widget?.RightItemDescription;
+                        var rightItemIconUrl = _Widget?.RightItemIcon?.Url(IPublishedUrlProvider);
+
+                        var leftItemTitle = _Widget?.LeftItemTitle;
+                        var leftItemDescription = _Widget?.LeftItemDescription;
+                        var reftItemIconUrl = _Widget?.LeftItemIcon?.Url(IPublishedUrlProvider);
+
+                        var bottomItemTitle = _Widget?.BottomItemTitle;
+                        var bottomItemMobile = _Widget?.BottomItemMobile;
+                        var bottomItemIconUrl = _Widget?.BottomItemIcon?.Url(IPublishedUrlProvider);
+
+                    }
+                    <div class="flag-icon"><img src="@accordionTitleImageUrl" data-uw-rm-alt-original="" role="presentation" alt="" data-uw-rm-alt="SVG"></div>
+                    <small id="officialSiteLabel" class="font-medium">
+                        @accordionTitle
+                    </small>
+                    <a id="verifyLink" href="#digitalStampBox" class="text-green check-link small" data-bs-toggle="collapse" aria-expanded="false" data-uw-original-href="#digitalStampBox">
+                        @verifyLinkText
+                    </a>
+                </div>
+
+                <div id="digitalStampBox" class="collapse">
+                    <div class="row gx-sm-5 py-4">
+                        <div class="col-lg-6 col-12">
+                            <div class="item d-flex align-items-start gap-3">
+                                <div class="icon border border-green rounded-circle">
+                                    <img src="@rightItemIconUrl" data-uw-rm-alt-original="" role="presentation" alt="" data-uw-rm-alt="SVG">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 id="trustedTitle" class="font-semibold text-dark mb-2" role="heading" aria-level="1" data-uw-rm-heading="level">
+                                        @rightItemTitle
+                                    </h6>
+                                    <p id="trustedDesc" class="text-secondary mb-0">
+                                        @rightItemDescription
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="item d-flex align-items-start gap-3">
+                                <div class="icon border border-green rounded-circle">
+                                    <img src="@reftItemIconUrl" data-uw-rm-alt-original="" role="presentation" alt="" data-uw-rm-alt="SVG">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 id="httpsTitle" class="font-semibold text-dark mb-2" role="heading" aria-level="2" data-uw-rm-heading="level">
+                                        @leftItemTitle
+                                    </h6>
+                                    <p id="httpsDesc" class="text-secondary mb-0">
+                                        @leftItemDescription
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="bg-white rounded-2 p-2 d-flex gap-3 align-items-center mt-4">
+                                <img src="@bottomItemIconUrl" data-uw-rm-alt-original="" alt="مسجل لدى هيئة الحكومة الرقمية برقم :" data-uw-rm-alt="CT">
+                                <p id="digitalStampText" class="mb-0">
+                                    @bottomItemTitle <a href="http://raqmi.dga.gov.sa/platforms/DigitalStamp/ShowCertificte/2937" class="text-green" data-uw-rm-brl="PR" data-uw-original-href="http://raqmi.dga.gov.sa/platforms/DigitalStamp/ShowCertificte/2937">@bottomItemMobile</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="bg-green top-header py-2 d-none d-xxl-flex">
         <div class="container-fluid">
             <div class="d-flex justify-content-between align-items-center px-xl-5 flex-wrap">
                 @if (_Widget != null && _Widget.Links != null && _Widget.Links.Count > 0 && _Widget.HideWidget is false)
@@ -42,13 +126,11 @@
                         foreach (var item in WarningLinks)
                         {
                             var _Item = (LinkItem)item.Content;
+                            var imgUrl = _Item?.IconOrImage?.Url(IPublishedUrlProvider);
+                            var imgAltText = _Item?.IconOrImage?.Value<string>(nameof(Image.AltText));
                             <li>
                                 <a href="@_Item?.Link?.Url" target="@_Item?.Link?.Target" class="d-flex align-items-center gap-2 text-danger bg-danger-light rounded-2 px-3 py-1">
-                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M7.66073 9.00074C7.61443 8.99999 7.56088 8.99997 7.49483 8.99997C7.21869 8.99997 6.99483 8.77611 6.99483 8.49997C6.99483 8.22383 7.21869 7.99997 7.49483 7.99997L7.5178 7.99997C7.65454 7.99991 7.8024 7.99985 7.92721 8.01663C8.07343 8.03629 8.26022 8.08685 8.41742 8.24405C8.57462 8.40125 8.62518 8.58804 8.64484 8.73426C8.66162 8.85907 8.66156 9.00693 8.6615 9.14368L8.6615 11.8333C8.6615 12.1094 8.43764 12.3333 8.1615 12.3333C7.88536 12.3333 7.6615 12.1094 7.6615 11.8333V9.16664C7.6615 9.10059 7.66148 9.04704 7.66073 9.00074Z" fill="#D92D20"></path>
-                                        <path d="M7.99483 5.83329C7.62664 5.83329 7.32817 6.13177 7.32817 6.49996C7.32817 6.86815 7.62664 7.16663 7.99483 7.16663H8.00082C8.36901 7.16663 8.66749 6.86815 8.66749 6.49996C8.66749 6.13177 8.36901 5.83329 8.00082 5.83329H7.99483Z" fill="#D92D20"></path>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.90803 1.84329C7.61767 1.60774 8.38242 1.60774 9.09206 1.84329C9.79876 2.07788 10.3536 2.63423 10.9111 3.41592C11.4667 4.19503 12.0806 5.28133 12.8719 6.68162L12.903 6.7366C13.6945 8.13711 14.3084 9.22336 14.6909 10.1043C15.0754 10.9895 15.2668 11.7538 15.1141 12.488C14.9603 13.2273 14.581 13.8996 14.0286 14.4077C13.4775 14.9146 12.7272 15.1285 11.7824 15.2312C10.843 15.3333 9.61417 15.3333 8.03254 15.3333H7.96754C6.38592 15.3333 5.15707 15.3333 4.21766 15.2312C3.27289 15.1285 2.52257 14.9146 1.97152 14.4077C1.41912 13.8996 1.03983 13.2273 0.886009 12.488C0.73324 11.7538 0.924708 10.9895 1.30914 10.1043C1.69172 9.22336 2.30561 8.1371 3.09709 6.7366L3.12816 6.68163C3.91951 5.28134 4.53343 4.19503 5.08902 3.41592C5.64646 2.63423 6.20133 2.07788 6.90803 1.84329ZM8.77702 2.79237C8.27192 2.62471 7.72817 2.62471 7.22307 2.79237C6.82574 2.92426 6.42633 3.26296 5.9032 3.99653C5.38188 4.72758 4.79336 5.76759 3.98315 7.20125C3.17298 8.63481 2.58554 9.67562 2.22638 10.5026C1.86659 11.3311 1.77646 11.8586 1.86504 12.2843C1.97678 12.8214 2.25174 13.3068 2.64852 13.6718C2.96014 13.9584 3.44572 14.1414 4.32573 14.237C5.20468 14.3326 6.37911 14.3333 8.00004 14.3333C9.62098 14.3333 10.7954 14.3326 11.6744 14.237C12.5544 14.1414 13.0399 13.9584 13.3516 13.6718C13.7483 13.3068 14.0233 12.8214 14.135 12.2843C14.2236 11.8586 14.1335 11.3311 13.7737 10.5026C13.4145 9.67562 12.8271 8.63481 12.0169 7.20125C11.2067 5.76759 10.6182 4.72758 10.0969 3.99653C9.57376 3.26296 9.17434 2.92426 8.77702 2.79237Z" fill="#D92D20"></path>
-                                    </svg>
+                                    <img src="@imgUrl" alt="@imgAltText" width="16" height="16">
                                     <span class="small font-medium">@_Item?.Title</span>
                                 </a>
                             </li>
@@ -62,13 +144,12 @@
                     foreach (var item in links)
                     {
                         var _Item = (LinkItem)item.Content;
+                        var imgUrl = _Item?.IconOrImage?.Url(IPublishedUrlProvider);
+                        var imgAltText = _Item?.IconOrImage?.Value<string>(nameof(Image.AltText));
                         <li>
                             <a href="@_Item?.Link?.Url" target="@_Item?.Link?.Target" class="d-flex align-items-center gap-2">
-                                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.66073 9.00074C7.61443 8.99999 7.56088 8.99997 7.49483 8.99997C7.21869 8.99997 6.99483 8.77611 6.99483 8.49997C6.99483 8.22383 7.21869 7.99997 7.49483 7.99997L7.5178 7.99997C7.65454 7.99991 7.8024 7.99985 7.92721 8.01663C8.07343 8.03629 8.26022 8.08685 8.41742 8.24405C8.57462 8.40125 8.62518 8.58804 8.64484 8.73426C8.66162 8.85907 8.66156 9.00693 8.6615 9.14368L8.6615 11.8333C8.6615 12.1094 8.43764 12.3333 8.1615 12.3333C7.88536 12.3333 7.6615 12.1094 7.6615 11.8333V9.16664C7.6615 9.10059 7.66148 9.04704 7.66073 9.00074Z" fill="#D92D20" />
-                                    <path d="M7.99483 5.83329C7.62664 5.83329 7.32817 6.13177 7.32817 6.49996C7.32817 6.86815 7.62664 7.16663 7.99483 7.16663H8.00082C8.36901 7.16663 8.66749 6.86815 8.66749 6.49996C8.66749 6.13177 8.36901 5.83329 8.00082 5.83329H7.99483Z" fill="#D92D20" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.90803 1.84329C7.61767 1.60774 8.38242 1.60774 9.09206 1.84329C9.79876 2.07788 10.3536 2.63423 10.9111 3.41592C11.4667 4.19503 12.0806 5.28133 12.8719 6.68162L12.903 6.7366C13.6945 8.13711 14.3084 9.22336 14.6909 10.1043C15.0754 10.9895 15.2668 11.7538 15.1141 12.488C14.9603 13.2273 14.581 13.8996 14.0286 14.4077C13.4775 14.9146 12.7272 15.1285 11.7824 15.2312C10.843 15.3333 9.61417 15.3333 8.03254 15.3333H7.96754C6.38592 15.3333 5.15707 15.3333 4.21766 15.2312C3.27289 15.1285 2.52257 14.9146 1.97152 14.4077C1.41912 13.8996 1.03983 13.2273 0.886009 12.488C0.73324 11.7538 0.924708 10.9895 1.30914 10.1043C1.69172 9.22336 2.30561 8.1371 3.09709 6.7366L3.12816 6.68163C3.91951 5.28134 4.53343 4.19503 5.08902 3.41592C5.64646 2.63423 6.20133 2.07788 6.90803 1.84329ZM8.77702 2.79237C8.27192 2.62471 7.72817 2.62471 7.22307 2.79237C6.82574 2.92426 6.42633 3.26296 5.9032 3.99653C5.38188 4.72758 4.79336 5.76759 3.98315 7.20125C3.17298 8.63481 2.58554 9.67562 2.22638 10.5026C1.86659 11.3311 1.77646 11.8586 1.86504 12.2843C1.97678 12.8214 2.25174 13.3068 2.64852 13.6718C2.96014 13.9584 3.44572 14.1414 4.32573 14.237C5.20468 14.3326 6.37911 14.3333 8.00004 14.3333C9.62098 14.3333 10.7954 14.3326 11.6744 14.237C12.5544 14.1414 13.0399 13.9584 13.3516 13.6718C13.7483 13.3068 14.0233 12.8214 14.135 12.2843C14.2236 11.8586 14.1335 11.3311 13.7737 10.5026C13.4145 9.67562 12.8271 8.63481 12.0169 7.20125C11.2067 5.76759 10.6182 4.72758 10.0969 3.99653C9.57376 3.26296 9.17434 2.92426 8.77702 2.79237Z" fill="#D92D20" />
-                                </svg>
+                                <img src="@imgUrl" alt="@imgAltText" width="16" height="16">
+
                                 <span class="small font-medium">@_Item?.Title</span>
                             </a>
                         </li>

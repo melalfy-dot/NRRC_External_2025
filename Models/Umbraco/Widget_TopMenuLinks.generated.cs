@@ -50,11 +50,75 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// AccordionTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("accordionTitle")]
+		public virtual string AccordionTitle => this.Value<string>(_publishedValueFallback, "accordionTitle");
+
+		///<summary>
+		/// AccordionTitleImage
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("accordionTitleImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops AccordionTitleImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "accordionTitleImage");
+
+		///<summary>
+		/// BottomItemIcon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("bottomItemIcon")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops BottomItemIcon => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "bottomItemIcon");
+
+		///<summary>
+		/// BottomItemMobile
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("bottomItemMobile")]
+		public virtual string BottomItemMobile => this.Value<string>(_publishedValueFallback, "bottomItemMobile");
+
+		///<summary>
+		/// BottomItemTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("bottomItemTitle")]
+		public virtual string BottomItemTitle => this.Value<string>(_publishedValueFallback, "bottomItemTitle");
+
+		///<summary>
 		/// Hide Widget
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
 		[ImplementPropertyType("hideWidget")]
 		public virtual bool HideWidget => this.Value<bool>(_publishedValueFallback, "hideWidget");
+
+		///<summary>
+		/// LeftItemDescription
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("leftItemDescription")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString LeftItemDescription => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "leftItemDescription");
+
+		///<summary>
+		/// LeftItemIcon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("leftItemIcon")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops LeftItemIcon => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "leftItemIcon");
+
+		///<summary>
+		/// LeftItemTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("leftItemTitle")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString LeftItemTitle => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "leftItemTitle");
 
 		///<summary>
 		/// Menu Links
@@ -65,11 +129,43 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Links => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "links");
 
 		///<summary>
+		/// RightItemDescription
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("rightItemDescription")]
+		public virtual string RightItemDescription => this.Value<string>(_publishedValueFallback, "rightItemDescription");
+
+		///<summary>
+		/// RightItemIcon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("rightItemIcon")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops RightItemIcon => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "rightItemIcon");
+
+		///<summary>
+		/// RightItemTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("rightItemTitle")]
+		public virtual string RightItemTitle => this.Value<string>(_publishedValueFallback, "rightItemTitle");
+
+		///<summary>
 		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("title")]
 		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
+
+		///<summary>
+		/// VerifyLinkText
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("verifyLinkText")]
+		public virtual string VerifyLinkText => this.Value<string>(_publishedValueFallback, "verifyLinkText");
 	}
 }
