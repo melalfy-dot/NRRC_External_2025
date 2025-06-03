@@ -123,11 +123,17 @@
   <data name="Descending" xml:space="preserve">
     <value>الأحدث</value>
   </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>أدخل البريد الإلكتروني</value>
+  </data>
   <data name="invalidEmail" xml:space="preserve">
     <value>ايميل غير صالح</value>
   </data>
   <data name="InvalidMobile" xml:space="preserve">
     <value>يجب أن تبدأ برمز الدولة بدون أصفار أو +</value>
+  </data>
+  <data name="NewsLetter" xml:space="preserve">
+    <value>النشرة البريدية</value>
   </data>
   <data name="NoData" xml:space="preserve">
     <value>لا يوجد بيانات</value>
@@ -140,6 +146,9 @@
   </data>
   <data name="RequiredField" xml:space="preserve">
     <value>حقل مطلوب</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>اشترك</value>
   </data>
   <data name="test" xml:space="preserve">
     <value>ccccc</value>

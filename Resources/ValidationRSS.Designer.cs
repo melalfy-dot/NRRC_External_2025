@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NCSP_Website_2024.Resources {
+namespace NRRC_External_2025.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace NCSP_Website_2024.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NCSP_Website_2024.Resources.ValidationRSS", typeof(ValidationRSS).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NRRC_External_2025.Resources.ValidationRSS", typeof(ValidationRSS).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

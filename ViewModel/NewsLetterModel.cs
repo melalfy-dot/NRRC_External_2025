@@ -1,4 +1,4 @@
-﻿using NCSP_Website_2024.Resources;
+﻿using NRRC_External_2025.Resources;
 using System.ComponentModel.DataAnnotations;
 
 namespace NRRC_External_2025.ViewModel
