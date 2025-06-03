@@ -6,7 +6,7 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Web.Common;
 using Umbraco.Cms.Core.Models.Blocks;
 using System.Dynamic;
-using NCSP_Website_2024.Resources;
+using NRRC_External_2025.Resources;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Mvc;

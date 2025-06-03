@@ -123,11 +123,17 @@
   <data name="Descending" xml:space="preserve">
     <value>Descending</value>
   </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>Enter Email</value>
+  </data>
   <data name="invalidEmail" xml:space="preserve">
     <value>Please Enter Valid Email</value>
   </data>
   <data name="InvalidMobile" xml:space="preserve">
     <value>Must start with country code without zeros or +</value>
+  </data>
+  <data name="NewsLetter" xml:space="preserve">
+    <value>News Letter</value>
   </data>
   <data name="NoData" xml:space="preserve">
     <value>No Data</value>
@@ -140,6 +146,9 @@
   </data>
   <data name="RequiredField" xml:space="preserve">
     <value>Required field</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>Subscribe</value>
   </data>
   <data name="test" xml:space="preserve">
     <value>kkkkkkk</value>
