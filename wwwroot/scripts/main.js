@@ -1,6 +1,9 @@
 // JavaScript source code
 $(document).ready(function () {
 
+    var direction = document.documentElement.getAttribute('dir');
+    var isRtl = (direction === 'rtl');
+
     /***** statistics ******** */
     $(window).scroll(startCounter);
 
@@ -27,7 +30,7 @@ $(document).ready(function () {
     // -------------news-----------------//
 
     $('.owl-news').owlCarousel({
-        rtl: true,
+        rtl: isRtl,
         margin: 20,
         responsiveClass: true,
         loop: false,
@@ -35,9 +38,9 @@ $(document).ready(function () {
         slideBy: 1,
         dotsEach: 1,
         navText: [
-        '<i class="bi bi-chevron-right"></i>', // Right icon (for RTL: this is "prev")
-        '<i class="bi bi-chevron-left"></i>' // Left icon (for RTL: this is "next")
-    ],
+            isRtl ? '<i class="bi bi-chevron-right"></i>' : '<i class="bi bi-chevron-left"></i>', // Prev
+            isRtl ? '<i class="bi bi-chevron-left"></i>' : '<i class="bi bi-chevron-right"></i>' // Next
+        ],
         responsive: {
             0: {
                 items: 1,
@@ -68,7 +71,7 @@ $(document).ready(function () {
     // --------------- services --------------//
 
     $('.owl-services').owlCarousel({
-        rtl: true,
+        rtl: isRtl,
         margin: 20,
         responsiveClass: true,
         loop: false,
@@ -76,9 +79,9 @@ $(document).ready(function () {
         slideBy: 1,
         dotsEach: 1,
         navText: [
-        '<i class="bi bi-chevron-right"></i>', // Right icon (for RTL: this is "prev")
-        '<i class="bi bi-chevron-left"></i>' // Left icon (for RTL: this is "next")
-    ],
+            isRtl ? '<i class="bi bi-chevron-right"></i>' : '<i class="bi bi-chevron-left"></i>', // Prev
+            isRtl ? '<i class="bi bi-chevron-left"></i>' : '<i class="bi bi-chevron-right"></i>' // Next
+        ],
         responsive: {
             0: {
                 items: 1,
@@ -111,7 +114,7 @@ $(document).ready(function () {
     // --------------- importantLinks --------------//
 
     $('.owl-importantlinks').owlCarousel({
-        rtl: true,
+        rtl: isRtl,
         margin: 20,
         responsiveClass: true,
         loop: false,
@@ -119,9 +122,9 @@ $(document).ready(function () {
         slideBy: 1,
         dotsEach: 1,
         navText: [
-        '<i class="bi bi-chevron-right"></i>', // Right icon (for RTL: this is "prev")
-        '<i class="bi bi-chevron-left"></i>' // Left icon (for RTL: this is "next")
-    ],
+            isRtl ? '<i class="bi bi-chevron-right"></i>' : '<i class="bi bi-chevron-left"></i>', // Prev
+            isRtl ? '<i class="bi bi-chevron-left"></i>' : '<i class="bi bi-chevron-right"></i>' // Next
+        ],
         responsive: {
             0: {
                 items: 1
@@ -152,7 +155,7 @@ $(document).ready(function () {
     // -------------events-----------------//
 
     $('.owl-events').owlCarousel({
-        rtl: true,
+        rtl: isRtl,
         margin: 20,
         responsiveClass: true,
         loop: false,
@@ -160,9 +163,9 @@ $(document).ready(function () {
         slideBy: 1,
         dotsEach: 1,
         navText: [
-        '<i class="bi bi-chevron-right"></i>', // Right icon (for RTL: this is "prev")
-        '<i class="bi bi-chevron-left"></i>' // Left icon (for RTL: this is "next")
-    ],
+            isRtl ? '<i class="bi bi-chevron-right"></i>' : '<i class="bi bi-chevron-left"></i>', // Prev
+            isRtl ? '<i class="bi bi-chevron-left"></i>' : '<i class="bi bi-chevron-right"></i>' // Next
+        ],
         responsive: {
             0: {
                 items: 1,
@@ -198,7 +201,7 @@ $(document).ready(function () {
     // -------------publications-----------------//
 
     $('.owl-publications').owlCarousel({
-        rtl: true,
+        rtl: isRtl,
         margin: 20,
         responsiveClass: true,
         loop: false,
@@ -206,9 +209,9 @@ $(document).ready(function () {
         slideBy: 1,
         dotsEach: 1,
         navText: [
-        '<i class="bi bi-chevron-right"></i>', // Right icon (for RTL: this is "prev")
-        '<i class="bi bi-chevron-left"></i>' // Left icon (for RTL: this is "next")
-    ],
+            isRtl ? '<i class="bi bi-chevron-right"></i>' : '<i class="bi bi-chevron-left"></i>', // Prev
+            isRtl ? '<i class="bi bi-chevron-left"></i>' : '<i class="bi bi-chevron-right"></i>' // Next
+        ],
         responsive: {
             0: {
                 items: 1,

@@ -482,16 +482,17 @@ input:focus {
     text-decoration: underline;
 }
 
-.mainMenu .dropdown-menu  li a {
-    color: inherit;
-    display: flex; 
-    width: 100%;
-    position: relative; 
-    transition: border-color ease-in-out 0.25s, color ease-in-out 0.25s;
-    padding: 5px 10px;
-    justify-content: space-between;
-    font-weight: 500;
-}
+    .mainMenu .dropdown-menu li a {
+        color: inherit;
+        display: flex;
+        width: 100%;
+        position: relative;
+        transition: border-color ease-in-out 0.25s, color ease-in-out 0.25s;
+        padding: 5px 10px;
+        justify-content: space-between;
+        font-weight: 500;
+        white-space: normal;
+    }
 .navbar-toggler {
     max-height: 50px;
     margin: auto 0;
