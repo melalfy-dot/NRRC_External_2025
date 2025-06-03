@@ -93,7 +93,7 @@
                         var imgAltText = _Item?.IconOrImage?.Value<string>(nameof(Image.AltText));
 
                         <li>
-                            <a href="@_Item?.Link?.Url" target="@_Item?.Link?.Target">
+                            <a class="border border-white-light rounded-2 p-2" href="@_Item?.Link?.Url" target="@_Item?.Link?.Target">
                                 <img src="@IconOrImageUrl" alt="@imgAltText">
                             </a>
                         </li>
@@ -158,8 +158,8 @@
                             var IconOrImageUrl = _Item?.IconOrImage?.Url(IPublishedUrlProvider);
                             var imgAltText = _Item?.IconOrImage?.Value<string>(nameof(Image.AltText));
                             <div class="col-sm-6 col-12 mb-4 text-center">
-                                <a href="@Url" target="@_Item.Link?.Target">
-                                    <img src="@IconOrImageUrl" alt="@imgAltText" class="w-100">
+                                <a class="d-flex h-100 align-items-center" href="@Url" target="@_Item.Link?.Target">
+                                    <img src="@IconOrImageUrl" alt="@imgAltText" >
                                 </a>
                             </div>
                         }
