@@ -5,6 +5,16 @@
     <Nullable>enable</Nullable>
     <CompressionEnabled>false</CompressionEnabled> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Forms\**" />
+    <Compile Remove="Views\Partials\Forms\**" />
+    <Content Remove="Views\Forms\**" />
+    <Content Remove="Views\Partials\Forms\**" />
+    <EmbeddedResource Remove="Views\Forms\**" />
+    <EmbeddedResource Remove="Views\Partials\Forms\**" />
+    <None Remove="Views\Forms\**" />
+    <None Remove="Views\Partials\Forms\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MediaRemove" Version="1.0.4" />
@@ -23,8 +33,6 @@
 
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Views\Forms\" />
-    <Folder Include="Views\Partials\Forms\" />
   </ItemGroup>
 
   <PropertyGroup>

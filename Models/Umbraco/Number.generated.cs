@@ -68,9 +68,8 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		/// Number
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("numberValue")]
-		public virtual string NumberValue => this.Value<string>(_publishedValueFallback, "numberValue");
+		public virtual int NumberValue => this.Value<int>(_publishedValueFallback, "numberValue");
 
 		///<summary>
 		/// Title

@@ -16,30 +16,31 @@
         var items = Model?.PublishedContentItem?
                          .ChildrenOfType(DT_NumbersItem.ModelTypeAlias)?
                          .Where(x => x.Value<bool>(nameof(DT_NumbersItem.Hide)) is false)
-                          .OrderBy(p => p.Value<DateTime>(nameof(DT_NumbersItem.ItemOrder)))
+                          .OrderBy(p => p.Value<int>(nameof(DT_NumbersItem.ItemOrder)))
                           .ToList();
         var readMoreLink = _Widget?.ReadMoreLink.ToLinkURL("");
-         <div class="bg-gray py-5 statistics">
+        <div class="bg-gray py-5 statistics">
             <div class="px-0 px-xl-5">
                 <div class="container-fluid">
                     <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
-                       @*  @if (Model.isHomePage)
+                        @*  @if (Model.isHomePage)
                         { *@
-                            <h3 class="font-bold">@_Widget?.Title</h3>
-                           
-                            <a class="btn bg-transparent d-flex align-items-center gap-2 font-bold border" href="@_Widget?.ReadMoreLink.ToLinkURL("")">
-                                <span>@_Widget?.ReadMoreLink?.Name</span>
-                            </a>
-                       @*  } *@ 
-                    </div>
-                    <p class="mb-4">@_Widget?.Details</p>
-                </div>
+                        <h3 class="font-bold">@_Widget?.Title</h3>
+
+                        <a class="btn bg-transparent d-flex align-items-center gap-2 font-bold border" href="@_Widget?.ReadMoreLink.ToLinkURL("")">
+                            <span>@_Widget?.ReadMoreLink?.Name</span>
+                        </a>
+                        @*  } *@ 
+                            </div>
+                    @_Widget?.Details
+                    @*<p class="mb-4">@_Widget?.Details</p> *@ 
+               </div>
             </div>
             <div class="px-0 px-xl-5 py-4 authority-count">
                 <div class="container-fluid">
                     <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap">
 
-                         @if (items != null && items.Count() > 0)
+                        @if (items != null && items.Count() > 0)
                         {
                             if (_Widget?.MaxRecords > 0)
                             {
@@ -54,12 +55,17 @@
                                         <img src="@ImageUrl" alt="@imgAltText" width="28" height="28" />
                                     </div>
                                     <h1 class="text-green-dark font-regular mb-2">
-                                        @{
-                                            var numberString = item.Value<string>("Number") ?? "0";
+                                        <span class="counter-count" data-count="@item?.Number">@item?.Number</span>
+                                        @item?.OperationCharacter
+                                     @*    @{
+                                            var numberString = item?.Number ?? "0";
                                             var parsed = 0;
                                             int.TryParse(numberString, out parsed);
-                                        }
-                                        <span class="counter-count">@parsed</span>@item.OperationCharacter
+
+                                            <span class="counter-count">@parsed</span>
+
+                                            @item?.OperationCharacter
+                                        } *@
                                     </h1>
                                     <p>
                                         @item.ToPageTitle()

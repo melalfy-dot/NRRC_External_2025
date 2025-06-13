@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>News_Letter</summary>
 	[PublishedModel("news_Letter")]
-	public partial class News_Letter : PublishedContentModel
+	public partial class News_Letter : PublishedContentModel, IPageProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -48,5 +48,71 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
+
+		///<summary>
+		/// CssClass
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("cssClass")]
+		public virtual string CssClass => global::Umbraco.Cms.Web.Common.PublishedModels.PageProperties.GetCssClass(this, _publishedValueFallback);
+
+		///<summary>
+		/// Page Icon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("pageIcon")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops PageIcon => global::Umbraco.Cms.Web.Common.PublishedModels.PageProperties.GetPageIcon(this, _publishedValueFallback);
+
+		///<summary>
+		/// Redirect URL
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("redirectURL")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> RedirectUrl => global::Umbraco.Cms.Web.Common.PublishedModels.PageProperties.GetRedirectUrl(this, _publishedValueFallback);
+
+		///<summary>
+		/// Show breadcrumb
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[ImplementPropertyType("showBreadcrumb")]
+		public virtual bool ShowBreadcrumb => global::Umbraco.Cms.Web.Common.PublishedModels.PageProperties.GetShowBreadcrumb(this, _publishedValueFallback);
+
+		///<summary>
+		/// Show Coming Soon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[ImplementPropertyType("showComingSoon")]
+		public virtual bool ShowComingSoon => global::Umbraco.Cms.Web.Common.PublishedModels.PageProperties.GetShowComingSoon(this, _publishedValueFallback);
+
+		///<summary>
+		/// Show in main menu
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[ImplementPropertyType("showInMainMenu")]
+		public virtual bool ShowInMainMenu => global::Umbraco.Cms.Web.Common.PublishedModels.PageProperties.GetShowInMainMenu(this, _publishedValueFallback);
+
+		///<summary>
+		/// Show in site map
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[ImplementPropertyType("showInSiteMap")]
+		public virtual bool ShowInSiteMap => global::Umbraco.Cms.Web.Common.PublishedModels.PageProperties.GetShowInSiteMap(this, _publishedValueFallback);
+
+		///<summary>
+		/// Show Page Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[ImplementPropertyType("showPageTitle")]
+		public virtual bool ShowPageTitle => global::Umbraco.Cms.Web.Common.PublishedModels.PageProperties.GetShowPageTitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// Show sharing icons
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[ImplementPropertyType("showSharingIcons")]
+		public virtual bool ShowSharingIcons => global::Umbraco.Cms.Web.Common.PublishedModels.PageProperties.GetShowSharingIcons(this, _publishedValueFallback);
 	}
 }

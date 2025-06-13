@@ -80,6 +80,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> EventUrl => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link>>(_publishedValueFallback, "eventURL");
 
 		///<summary>
+		/// Hide
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[ImplementPropertyType("hide")]
+		public virtual bool Hide => this.Value<bool>(_publishedValueFallback, "hide");
+
+		///<summary>
 		/// Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]

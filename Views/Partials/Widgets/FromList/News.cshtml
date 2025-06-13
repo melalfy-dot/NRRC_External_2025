@@ -53,7 +53,7 @@
                                                         <span class="font-medium">@date</span>
                                                     </div>
                                                     <h5 class="font-bold">@item.ToPageTitle()</h5>
-                                                    <p>@item.Description</p>
+                                                    <p>@item.Description.ToTrimLetters(200)</p>
                                                 </div>
                                                 <a class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black" href="@item.Url(IPublishedUrlProvider)">
                                                     <i class="bi bi-arrow-right"></i>

@@ -53,7 +53,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		/// Order
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
-		[ImplementPropertyType("order")]
-		public virtual int Order => this.Value<int>(_publishedValueFallback, "order");
+		[ImplementPropertyType("itemOrder")]
+		public virtual int ItemOrder => this.Value<int>(_publishedValueFallback, "itemOrder");
 	}
 }

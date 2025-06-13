@@ -133,7 +133,7 @@
                 </h6>
                 @if (lastUpdated is not null && lastUpdated.HasValue)
                 {
-                    var UpdatedaDate_trans= Umbraco.GetDictionaryValue("Latest Updatated Date");
+                    var UpdatedaDate_trans = Umbraco.GetDictionaryValue("Latest_Updatated_Date");
                     <span>@UpdatedaDate_trans  @lastUpdated.Value.ToString("dd/MM/yyyy")</span>
                 }
             }
