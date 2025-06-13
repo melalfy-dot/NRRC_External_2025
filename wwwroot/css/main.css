@@ -845,6 +845,30 @@ div[data-name="WebPartZone"] h4.ms-rteElement-H4 {
      
 }
 
-    
+/*Page Header*/
+.pageContent .py-5 h2 {
+    font-size: 35px;
+    color: #14573a;
+    margin-bottom: 15px;
+}
 
-    
+/*Section Header*/
+.pageContent .py-5 h3 {
+    font-size: 30px;
+    color: #14573a;
+    margin-bottom: 15px;
+}
+
+/*Paragraph Header*/
+.pageContent .py-5 h4 {
+    font-size: 20px;
+    color: #14573a;
+    margin-bottom: 15px;
+}
+
+/*Ancor*/
+.pageContent .py-5 a {
+    text-decoration: underline;
+    color: #1b8354;
+}
+

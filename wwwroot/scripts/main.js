@@ -12,10 +12,12 @@ $(document).ready(function () {
             $(window).off("scroll", startCounter);
             $(".counter-count").each(function () {
                 var $this = $(this);
+                var finalValue = parseInt($this.data("count")); // Get the target value
+
                 jQuery({
                     Counter: 0
                 }).animate({
-                    Counter: $this.text()
+                    Counter: finalValue
                 }, {
                     duration: 5000,
                     easing: "swing",

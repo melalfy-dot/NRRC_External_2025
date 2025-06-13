@@ -1,0 +1,32 @@
+{
+  "alias": "myRichTextConfig",
+  "name": "Rich Text Enhancements",
+  "editor": "TinyMCE",
+  "manifest": {
+    "modules": {
+      "richtext": {
+        "plugins": [ "textcolor", "colorpicker", "fontsize", "fontselect" ],
+        "commands": [
+          {
+            "alias": "forecolor",
+            "name": "Change Color",
+            "mode": "Selection"
+          },
+          {
+            "alias": "fontselect",
+            "name": "Font Family",
+            "mode": "Selection"
+          },
+          {
+            "alias": "fontsizeselect",
+            "name": "Font Size",
+            "mode": "Selection"
+          }
+        ],
+        "customConfig": {
+          "color_map": "[\"#000000\",\"Black\",\"#a4b69c\",\"Gray\"]"
+        }
+      }
+    }
+  }
+}

@@ -13,21 +13,83 @@
     var _Widget = (Widget_ItemsFromList)Model?.BlockGridItem?.Content;
     if (_Widget != null && _Widget.HideWidget is false)
     {
-        @* var items = Model?.PublishedContentItem?
-                         .ChildrenOfType(Dt_NewsItem.ModelTypeAlias)?
-                         .Where(x => x.Value<bool>(nameof(Dt_EventsItem.Hide)) is false)
-                          .OrderByDescending(p => p.Value<DateTime>(nameof(Dt_NewsItem.Date)))
-                          .ToList(); *@
-
         var items = Model?.PublishedContentItem?
        .ChildrenOfType(Dt_EventsItem.ModelTypeAlias)?
+        .Where(x => x.Value<bool>(nameof(Dt_EventsItem.Hide)) is false)
         .OrderByDescending(p => p.Value<DateTime>(nameof(Dt_EventsItem.DateStart)))
         .ToList();
 
 
 
 
-      @*   <div class="py-5 events">
+
+
+
+
+
+
+        <div class="py-5 events">
+            <div class="px-0 px-xl-5">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+                        @if (Model.isHomePage)
+                        {
+                            <h3 class="font-bold">@_Widget?.Title</h3>
+                            var readMoreLink = _Widget?.ReadMoreLink.ToLinkURL("");
+                            <a class="btn bg-transparent d-flex align-items-center gap-2 font-bold border" href="@_Widget?.ReadMoreLink.ToLinkURL("")">
+                                <span>@_Widget?.ReadMoreLink?.Name</span>
+                            </a>
+                        }
+                    </div>
+                    <div class="py-4">
+                        <div class="owl-carousel owl-theme owl-events">
+                            @if (items != null && items.Count() > 0)
+                    {
+                        if (_Widget?.MaxRecords > 0)
+                        {
+                            items = items?.Take(_Widget.MaxRecords).ToList();
+                        }
+                        foreach (Dt_EventsItem item in items)
+                        {
+                            var ImageUrl = item?.Image?.Url(IPublishedUrlProvider);
+                            var imgAltText = item?.Image?.Value<string>(nameof(Image.AltText));
+
+
+                                    <div class="item">
+                                        <div class="events-item border bg-white rounded-4 p-3 d-flex flex-column align-items-start">
+                                            <div class="d-flex align-items-center gap-2 mb-3">
+
+                                                <img src="/images/calendar-dark-icon.svg" alt="" data-uw-rm-alt="SVG" height="22" width="22" style="width: 22px;" />
+                                                <span class="font-medium">@item?.DateStart.ToDateTime44()</span>
+                                            </div>
+                                            <h6 class="mb-2 d-flex align-items-center gap-1" role="heading" aria-level="4">
+                                                <i class="bi bi-geo-alt"></i><span>@item?.Location</span>
+                                            </h6>
+                                            <p class="flex-grow-1 d-flex align-items-start" style="height: 50px; overflow:hidden;">
+                                                @item.ToPageTitle()
+                                            </p>
+
+                                            <a class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black" href="@item?.Url(IPublishedUrlProvider)">
+                                                <i class="bi bi-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+
+
+}
+
+
+
+@*   <div class="py-5 events">
             <div class="px-0 px-xl-5">
                 <div class="container-fluid">
                     <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
@@ -104,71 +166,4 @@
             }
 
         </div> *@
-
-
-
-
-
-
-
-
-        <div class="py-5 events">
-            <div class="px-0 px-xl-5">
-                <div class="container-fluid">
-                    <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
-                        @if (Model.isHomePage)
-                        {
-                            <h3 class="font-bold">@_Widget?.Title</h3>
-                            var readMoreLink = _Widget?.ReadMoreLink.ToLinkURL("");
-                            <a class="btn bg-transparent d-flex align-items-center gap-2 font-bold border" href="@_Widget?.ReadMoreLink.ToLinkURL("")">
-                                <span>@_Widget?.ReadMoreLink?.Name</span>
-                            </a>
-                        }
-                    </div>
-                    <div class="py-4">
-                        <div class="owl-carousel owl-theme owl-events">
-                            @if (items != null && items.Count() > 0)
-                    {
-                        if (_Widget?.MaxRecords > 0)
-                        {
-                            items = items?.Take(_Widget.MaxRecords).ToList();
-                        }
-                        foreach (Dt_EventsItem item in items)
-                        {
-                            var ImageUrl = item?.Image?.Url(IPublishedUrlProvider);
-                            var imgAltText = item?.Image?.Value<string>(nameof(Image.AltText));
-
-
-                                    <div class="item">
-                                        <div class="events-item border bg-white rounded-4 p-3 d-flex flex-column align-items-start">
-                                            <div class="d-flex align-items-center gap-2 mb-3">
-
-                                                <img src="/images/calendar-dark-icon.svg" alt="" data-uw-rm-alt="SVG" height="22" width="22" style="width: 22px;" />
-                                                <span class="font-medium">@item?.DateStart.ToDateTime44()</span>
-                                            </div>
-                                            <h6 class="mb-2 d-flex align-items-center gap-1" role="heading" aria-level="4">
-                                                <i class="bi bi-geo-alt"></i><span>@item?.Location</span>
-                                            </h6>
-                                            <p class="flex-grow-1 d-flex align-items-start" style="height: 50px; overflow:hidden;">
-                                                @item.ToPageTitle()
-                                            </p>
-
-                                            <a class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black" href="@item?.Url(IPublishedUrlProvider)">
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                }
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    }
-
-
-}
-
 
