@@ -1174,7 +1174,7 @@ namespace NetCore.Models
         {
             if (!string.IsNullOrEmpty(stringValue))
             {
-                return stringValue.ToTurncateString(0, length);
+                return stringValue.ToTurncateString (0, length);
             }
             return stringValue;
 

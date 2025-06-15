@@ -13,16 +13,11 @@
     var _Widget = (Widget_ItemsFromList)Model?.BlockGridItem?.Content;
     if (_Widget != null && _Widget.HideWidget is false)
     {
-        @* var items = Model?.PublishedContentItem?
-                         .ChildrenOfType(Dt_NewsItem.ModelTypeAlias)?
-                         .Where(x => x.Value<bool>(nameof(Dt_EventsItem.Hide)) is false)
-                          .OrderByDescending(p => p.Value<DateTime>(nameof(Dt_NewsItem.Date)))
-                          .ToList(); *@
-
         var items = Model?.PublishedContentItem?
-                       .ChildrenOfType(Dt_EventsItem.ModelTypeAlias)?
-                        .OrderByDescending(p => p.Value<DateTime>(nameof(Dt_EventsItem.DateStart)))
-                        .ToList();
+       .ChildrenOfType(Dt_EventsItem.ModelTypeAlias)?
+        .Where(x => x.Value<bool>(nameof(Dt_EventsItem.Hide)) is false)
+        .OrderByDescending(p => p.Value<DateTime>(nameof(Dt_EventsItem.DateStart)))
+        .ToList();
 
 
         if (Model.isHomePage)
@@ -236,4 +231,5 @@
 
 }
 
+        </div> *@
 

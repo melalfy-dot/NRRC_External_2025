@@ -77,42 +77,33 @@
         <!--Inner Page-->
         @if (isHome is false && master != null)
         {
-           <main class="flex-grow-1">
+            <main class="flex-grow-1">
                 <div class="px-0 px-xl-5 py-5">
                     <div class="container-fluid">
                         @if (!ShowComingSoon)
                         {
                             @await Html.PartialAsync("_Breadcrumb")
                         }
-                        <div class="py-5">
-                            @RenderBody()
-                        </div>
+                       @*  <div class="row gx-xl-5">
+                            <div class="py-5"> *@
+                                @{
+                                    RenderContent();
+                                    @RenderBody()
+                                }
+                          @*   </div>
+                        </div> *@
                     </div>
                 </div>
             </main>
-
         }
         else
         {
+            RenderContent();
             @RenderBody()
         }
 
 
-        @if (!ShowComingSoon)
-        {
-            @await Html.PartialAsync("Partials/PageContent")
 
-
-
-
-            @await Html.PartialAsync("PageBlockGrid")
-
-            @await Html.PartialAsync("PageBlockLayout")
-
-            @* @await Html.PartialAsync("PageBlockRichText") *@
-
-            @*         @await Html.PartialAsync("_SharingIcons")
- *@         }
 
         @await Html.PartialAsync("_Footer")
     </div>
@@ -125,7 +116,20 @@
 </body>
 </html>
 
+@{
+    async void RenderContent()
+    {
+        @if (!ShowComingSoon)
+        {
+            @await Html.PartialAsync("Partials/PageContent")
 
+            @await Html.PartialAsync("PageBlockGrid")
 
+            @await Html.PartialAsync("PageBlockLayout")
 
+            @* @await Html.PartialAsync("PageBlockRichText") *@
 
+            @* @await Html.PartialAsync("_SharingIcons") *@ 
+        }
+    }
+}

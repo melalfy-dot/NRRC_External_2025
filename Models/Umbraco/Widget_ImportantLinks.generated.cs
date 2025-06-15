@@ -50,12 +50,35 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Hide Widget
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[ImplementPropertyType("hideWidget")]
+		public virtual bool HideWidget => this.Value<bool>(_publishedValueFallback, "hideWidget");
+
+		///<summary>
+		/// Important Links Tab
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("importantTab")]
+		public virtual string ImportantTab => this.Value<string>(_publishedValueFallback, "importantTab");
+
+		///<summary>
 		/// Links
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("links")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Links => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "links");
+
+		///<summary>
+		/// Related Tab
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.8.0+a486d5d")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("relatedTab")]
+		public virtual string RelatedTab => this.Value<string>(_publishedValueFallback, "relatedTab");
 
 		///<summary>
 		/// Title

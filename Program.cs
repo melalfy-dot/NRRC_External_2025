@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http.Features;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
@@ -6,7 +8,15 @@ builder.CreateUmbracoBuilder()
     .AddComposers()
     .Build();
 
+// Add this BEFORE app build:
+builder.Services.Configure<FormOptions>(options =>
+{
+    options.MultipartBodyLengthLimit = 65428800; // 65 MB
+
+});
+
 WebApplication app = builder.Build();
+
 
 await app.BootUmbracoAsync();
 

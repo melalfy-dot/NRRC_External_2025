@@ -16,7 +16,7 @@
         var items = Model?.PublishedContentItem?
             .ChildrenOfType(Dt_ServicesItem.ModelTypeAlias)?
             .Where(x => x.Value<bool>(nameof(Dt_ServicesItem.Hide)) is false)
-            .OrderByDescending(p => p.Value<DateTime>(nameof(Dt_ServicesItem.ItemOrder)))
+            .OrderBy(p => p.Value<int>(nameof(Dt_ServicesItem.ItemOrder)))
             .ToList();
 
         <div class="bg-gray py-5 services">
@@ -27,10 +27,12 @@
                         <a href="@_Widget.ReadMoreLink?.ToLinkURL()" class="btn bg-transparent d-flex align-items-center gap-2 font-bold border">
                             <span>@_Widget.ReadMoreLink?.Name </span>
                         </a>
-                    </div>
-                    <p class="mb-4">
+                    </div> 
+                    
+                    @_Widget.Details
+                    @* <p class="mb-4">
                         @_Widget.Details
-                    </p>
+                    </p> *@
 
                     <div class="py-4">
                         <div class="owl-carousel owl-theme owl-services">
@@ -53,7 +55,7 @@
                                             <h5 class="font-bold mb-2">
                                                 <a href="@item.Url(IPublishedUrlProvider)">@item.ToPageTitle()</a>
                                             </h5>
-                                            <p class="flex-grow-1">@item.Description</p>
+                                            <p class="flex-grow-1">@item.Description?.ToTrimLetters(120)</p>
                                             <ul class="d-flex gap-2 flex-wrap mb-4 px-0 mt-1 small font-medium">
                                                 @if (item?.Category is not null)
                                                 {
@@ -69,7 +71,7 @@
                                                 }
                                             </ul>
                                             <a class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black" href="@item.Url(IPublishedUrlProvider)">
-                                                إبدأ الخدمة
+                                                @Umbraco.GetDictionaryValue("Start_Service")
                                                 <i class="bi bi-arrow-right"></i>
                                             </a>
                                         </div>
