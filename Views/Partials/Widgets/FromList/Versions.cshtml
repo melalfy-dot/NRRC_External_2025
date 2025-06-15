@@ -21,54 +21,210 @@
         .ToList();
 
 
+        if (Model.isHomePage)
+        {
+            <div class="bg-light py-5 publications">
+                <div class="px-0 px-xl-5">
+                    <div class="container-fluid">
+                        <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
 
-        <div class="bg-light py-5 publications">
-            <div class="px-0 px-xl-5">
-                <div class="container-fluid">
-                    <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
-                        @if (Model.isHomePage)
-                        {
                             <h3 class="font-bold">@_Widget?.Title</h3>
                             var readMoreLink = _Widget?.ReadMoreLink.ToLinkURL("");
                             <a class="btn bg-transparent d-flex align-items-center gap-2 font-bold border" href="@_Widget?.ReadMoreLink.ToLinkURL("")">
                                 <span>@_Widget?.ReadMoreLink?.Name</span>
                             </a>
-                        }
-                    </div>
-                    <div class="py-4">
-                        <div class="owl-carousel owl-theme owl-publications">
 
-                            @if (items != null && items.Count() > 0)
-                            {
-                                if (_Widget?.MaxRecords > 0)
+                        </div>
+                        <div class="py-4">
+                            <div class="owl-carousel owl-theme owl-publications">
+
+                                @if (items != null && items.Count() > 0)
                                 {
-                                    items = items?.Take(_Widget.MaxRecords).ToList();
-                                }
-                                foreach (Dt_VersionsItem item in items)
-                                {
-                                    var ImageUrl = item?.Image?.Url(IPublishedUrlProvider);
-                                    var imgAltText = item?.Image?.Value<string>(nameof(Image.AltText));
-                                    <div class="item">
-                                        <div class="publications-item border bg-white rounded-4 p-3 d-flex flex-column align-items-start">
-                                            <div class="icon bg-green2 rounded-circle d-flex align-items-center justify-content-center mb-4">
-                                                <img src="/images/pdf-white-icon.svg" alt="pdf icon" width="20" height="22" />
+                                    if (_Widget?.MaxRecords > 0)
+                                    {
+                                        items = items?.Take(_Widget.MaxRecords).ToList();
+                                    }
+                                    foreach (Dt_VersionsItem item in items)
+                                    {
+                                        var ImageUrl = item?.Image?.Url(IPublishedUrlProvider);
+                                        var imgAltText = item?.Image?.Value<string>(nameof(Image.AltText));
+                                        <div class="item">
+                                            <div class="publications-item border bg-white rounded-4 p-3 d-flex flex-column align-items-start">
+                                                <div class="icon bg-green2 rounded-circle d-flex align-items-center justify-content-center mb-4">
+                                                    <img src="/images/pdf-white-icon.svg" alt="pdf icon" width="20" height="22" />
+                                                </div>
+                                                <h5 class="mb-4 font-bold">
+                                                    @item.ToPageTitle()
+                                                </h5>
+                                                <a class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black" href="@item?.File.Url(IPublishedUrlProvider)">
+                                                    <i class="bi bi-arrow-right"></i>
+                                                </a>
                                             </div>
-                                            <h5 class="mb-4 font-bold">
-                                                @item.ToPageTitle()
-                                            </h5>
-                                            <a class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black" href="@item?.File.Url(IPublishedUrlProvider)">
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
                                         </div>
-                                    </div>
+                                    }
                                 }
-                            }
 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        }
+        else
+        {
+            <div class="px-0 px-xl-5 py-5">
+                <div class="container-fluid">
+                    <!-- Search -->
+                    <div class="row mb-4">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="inner-search-box border px-3 py-2 d-flex align-items-center gap-3 rounded-2">
+                                <div class="icon">
+                                    <img src="\images\search-dark-icon.svg" alt="بحث" />
+                                </div>
+                                <input id="pubSearch" type="text" class="form-control border-0 bg-transparent w-100" placeholder="أدخل كلمة البحث..." onkeyup="filterPublications()" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- No results alert -->
+                    <div id="noResultsAlert" class="alert alert-warning d-none text-center">
+                        لا توجد نتائج مطابقة لبحثك.
+                    </div>
+
+                    <!-- Publications Grid -->
+                    <div class="row gx-4 gy-4" id="pubContainer">
+                        @foreach (Dt_VersionsItem item in items)
+                        {
+                            var title = item.ToPageTitle();
+                            var pdfUrl = item?.File?.Url(IPublishedUrlProvider) ?? "#";
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 pub-card">
+                                <div class="publications-item border bg-white rounded-4 p-3 d-flex flex-column align-items-start h-100">
+                                    <div class="icon bg-green2 rounded-circle d-flex align-items-center justify-content-center mb-4 overflow-hidden">
+                                        <img src="/images/pdf-white-icon.svg" width="20" alt="pdf" />
+                                    </div>
+                                    <h5 class="mb-4 font-bold" style="height:60px; overflow:hidden;">@title</h5>
+                                    <a href="@pdfUrl" class="btn bg-white d-flex align-items-center gap-2 font-medium border text-black">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="col-12 d-flex justify-content-center mt-5">
+                        <nav class="Page navigation example">
+                            <div class="pagination">
+                                <span id="customPagination" class="d-flex flex-row" dir="rtl"></span>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                const itemsPerPage = 3;
+                let currentPage = 1;
+                let filteredItems = [];
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    filteredItems = Array.from(document.querySelectorAll(".pub-card"));
+                    setupPagination();
+                    showPage();
+                });
+
+                function filterPublications() {
+                    const searchVal = document.getElementById("pubSearch").value.toLowerCase();
+                    const allCards = Array.from(document.querySelectorAll(".pub-card"));
+                    filteredItems = [];
+
+                    allCards.forEach(card => {
+                        const title = card.querySelector("h5").innerText.toLowerCase();
+                        const match = title.includes(searchVal);
+                        card.style.display = match ? "" : "none";
+                        if (match) filteredItems.push(card);
+                    });
+
+                    const alert = document.getElementById("noResultsAlert");
+                    alert.classList.toggle("d-none", filteredItems.length > 0);
+
+                    currentPage = 1;
+                    setupPagination();
+                    showPage();
+                }
+
+                function setupPagination() {
+                    const container = document.getElementById("customPagination");
+                    container.innerHTML = "";
+                    const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+                    if (totalPages <= 1) return;
+
+                    const prev = createPageLink("bi bi-chevron-left", () => {
+                        if (currentPage > 1) {
+                            currentPage--;
+                            showPage();
+                        }
+                    });
+                    container.appendChild(prev);
+                    container.appendChild(document.createTextNode('\u00A0'));
+
+                    for (let i = 1; i <= totalPages; i++) {
+                        const link = createPageLink(i, () => {
+                            currentPage = i;
+                            showPage();
+                        });
+                        if (i === currentPage) link.classList.add("active");
+                        container.appendChild(link);
+                        container.appendChild(document.createTextNode('\u00A0'));
+                    }
+
+                    const next = createPageLink("bi bi-chevron-right", () => {
+                        if (currentPage < totalPages) {
+                            currentPage++;
+                            showPage();
+                        }
+                    });
+                    container.appendChild(next);
+                }
+
+                                function createPageLink(content, clickHandler) {
+                    const a = document.createElement("a");
+                    a.className = typeof content === "string" && content.includes("bi")
+                        ? `page-link ${content} d-flex align-items-center`
+                        : "page-link";
+                    a.href = "#";
+
+                    // Show content properly (for arrows or numbers)
+                    if (typeof content === "number") {
+                        a.innerText = content;
+                    } else if (!content.includes("bi")) {
+                        a.innerText = content;
+                    }
+
+                    a.onclick = function (e) {
+                        e.preventDefault();
+                        clickHandler();
+                    };
+                    return a;
+                }
+
+
+                function showPage() {
+                    const start = (currentPage - 1) * itemsPerPage;
+                    const end = start + itemsPerPage;
+
+                    filteredItems.forEach((card, i) => {
+                        card.style.display = (i >= start && i < end) ? "" : "none";
+                    });
+
+                    const pageLinks = document.querySelectorAll("#customPagination .page-link");
+                    pageLinks.forEach(link => link.classList.remove("active"));
+                    const activeLink = Array.from(pageLinks).find(link => link.innerText === currentPage.toString());
+                    if (activeLink) activeLink.classList.add("active");
+                }
+            </script>
+        }
+
 
 
     }
